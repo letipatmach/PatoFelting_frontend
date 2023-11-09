@@ -22,7 +22,7 @@ const headers = {
 };
 
 export class MiServidor {
-  static urlBase ="http://localhost:3000";
+  static urlBase ="https://patofelting-api.onrender.com";
   //"https://vivero-nature-backend.onrender.com" direccion backen deployada
 
 
