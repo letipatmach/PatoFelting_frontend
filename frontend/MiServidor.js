@@ -23,7 +23,7 @@ const headers = {
 
 export class MiServidor {
   static urlBase ="https://patofelting-api.onrender.com";
-  //"https://vivero-nature-backend.onrender.com" direccion backen deployada
+  
 
 
  
@@ -34,8 +34,7 @@ export class MiServidor {
 
   // GET /Obtengo listado de todos los articulos
 
-  static obtenerListadoArticulos() {
-    console.log("no entender ni mierda");
+  static obtenerListadoArticulos() {   
     return fetch(obtenerUrl("listaArticulos"))
       .then(procesarRespuesta)
       .catch(manejarErrores);
@@ -45,7 +44,7 @@ export class MiServidor {
 
 
  
-//*******************************************comentario largo
+//*******************************************comentario
  
 }
 
