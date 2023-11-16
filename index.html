@@ -7,7 +7,7 @@
     <!-- enlazo fuentes de google chrome -->
 
     <!-- font Andada Pro -->
-    <!-- CSS --> 
+    <!-- CSS -->
     <!-- font-family: 'Andada Pro', serif; -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,10 +16,9 @@
       rel="stylesheet"
     />
 
-
     <!-- font alegreya sans -->
 
-      <!-- CSS --> 
+    <!-- CSS -->
     <!-- font-family: 'Alegreya Sans', sans-serif;-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,53 +26,66 @@
       href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-<!-- Iconos -->
-<script src="//glenthemes.github.io/iconsax/geticons.js"></script>
-<link href="//glenthemes.github.io/iconsax/style.css" rel="stylesheet">
-    <link rel=“stylesheet” href=“iconos/style.css>
+   
     <!-- Me enlazo a mi propia hoja de estilos -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <!-- -----------------------------------------------HEADER---------------------------------------------------------- -->
     <div class="fondoInicio">
-    <div class="centrado">
-    <header>
-        <a href="index.html">
-          <img
-            src="img/logo_editado.png"
-            alt="logo con descripción Pato felting fondo verde"
-          />
-        </a>
-        
-      </header>
-    </div>
-</div>
+      <div class="centrado">
+        <header>
+          <a href="index.html">
+            <img
+              src="img/logo_editado.png"
+              alt="logo con descripción Pato felting fondo verde"
+            />
+          </a>
+        </header>
+      </div>
+    </div> 
+    <!-- -------------------------------------------------MENU--------------------------------------------------------- -->
+    <nav class="centrado">
+      <ul>
+        <li><a href="index.html" class="itemActivo">Home</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="personalizaciones.html">Personalizaciones</a></li>
+      </ul>
+    </nav>
 
-<i class=“iconsax” icon-name=“milk”></i>
+    <!-- --------------------------------------------SECCION NOVEDADES-------------------------------------------------- -->
+    
+    <section>
 
-<section class="centrado">
-  <table>
-    <thead>
-      <tr>
-        <th>idArticulo</th>
-        <th>Nombre</th>
-        <th>Precio Unitario ($)</th>
-      </tr>
-    </thead>
-    <tbody id="datosArticulos"></tbody>
-    <tfoot>
-      <th>idArticulo</th>
-      <th>Nombre</th>
-      <th>Precio Unitario ($)</th>
-     
-    </tfoot>
-  </table>
+    </section>
+
+
+    <!-- --------------------------------------------SECCION OFERTAS-------------------------------------------------------->
+<section>
+
 </section>
+    <section class="centrado">
+      <table>
+        <thead>
+          <tr>
+            <th>idArticulo</th>
+            <th>Nombre</th>
+            <th>Precio Unitario ($)</th>
+          </tr>
+        </thead>
+        <tbody id="datosArticulos"></tbody>
+        <tfoot>
+          <th>idArticulo</th>
+          <th>Nombre</th>
+          <th>Precio Unitario ($)</th>
+        </tfoot>
+      </table>
+    </section>
 
-
-
-
-
-<script src="js/index.js" type="module"></script>
-</body>
+    <footer>
+      
+    </footer>
+    <script src="js/index.js" type="module"></script>
+  </body>
 </html>
