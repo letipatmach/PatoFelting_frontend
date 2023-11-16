@@ -17,7 +17,8 @@ export class Articulos {
     <td>${this.idArticulo}</td>
     <td>${this.nombre}</td>
     <td>${this.precio}</td>
-    <td>${this.imagenPorDefecto}</td>
+    <td><img src="${this.imagenPorDefecto}" alt="${this.imagenPorDefecto}"></td>
+    <td>xxxxx</td>
     </tr>
       `;
   }

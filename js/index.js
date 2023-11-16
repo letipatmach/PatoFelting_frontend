@@ -25,7 +25,8 @@ const listarArticulos = (data) => {
       new Articulos (
         c.idArticulo,
         c.nombre,       
-        c.precio
+        c.precio,
+        c.imagenPorDefecto
        
       )
   );
