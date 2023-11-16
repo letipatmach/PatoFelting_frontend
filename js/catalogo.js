@@ -16,19 +16,21 @@ import {
 
 
 
-//Listo los artículos con novedades
+//Listo en pantalla inicial los articulos
 
-const listarNovedades = (data) => {
+const listarArticulos = (data) => {
   console.log(data);
   const articulo = data.map(
     (c) =>
-      new Articulos (       
-        c.nombre,
+      new Articulos (
+        c.idArticulo,
+        c.nombre,       
+        c.precio,
         c.imagenPorDefecto
        
       )
   );
-  imprimir("novedades", mostrarTodosArticulos(articulo));
+  imprimir("datosArticulos", mostrarTodosArticulos(articulo));
 
 };
 
@@ -38,4 +40,4 @@ const listarNovedades = (data) => {
 
 //------------------------------------Funciones al cargar el sitio----------------------------------------------------
 
-MiServidor.obtenerNovedades().then(listarNovedades).catch(mostrarError);
+MiServidor.obtenerListadoArticulos().then(listarArticulos).catch(mostrarError);

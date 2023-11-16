@@ -4,11 +4,16 @@ export class Articulos {
   precio;
   imagenPorDefecto;
 
-  constructor(idArticulo = number, nombre = "", precio = number,imagenPorDefecto="") {
+  constructor(
+    idArticulo = number,
+    nombre = "",
+    precio = number,
+    imagenPorDefecto = ""
+  ) {
     this.idArticulo = idArticulo;
     this.nombre = nombre;
     this.precio = precio;
-    this.imagenPorDefecto=imagenPorDefecto;
+    this.imagenPorDefecto = imagenPorDefecto;
   }
 
   mostrarListadoArticulos() {
@@ -21,5 +26,12 @@ export class Articulos {
     <td>xxxxx</td>
     </tr>
       `;
+  }
+  mostrarNovedades() {
+    return `
+    <article>
+      <img src="${this.imagenPorDefecto}" alt="${this.nombre}" title="${this.nombre}" />
+      <h2>${this.nombre}</h2>
+    </article>`;
   }
 }

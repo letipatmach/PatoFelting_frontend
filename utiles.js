@@ -31,6 +31,7 @@ export const imprimir = (elemento, contenido) => {
 
 
 export const mostrarTodosArticulos = (articulos = [new Articulos()]) => {
+  console.log("Esta llamando esta funcion?")
   let listado = "";
 
   articulos.forEach((c) => {

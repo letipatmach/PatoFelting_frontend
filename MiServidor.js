@@ -40,6 +40,14 @@ export class MiServidor {
       .catch(manejarErrores);
   }
 
+  //GET /Obtengo listado de articulos en novedades
+
+  static obtenerNovedades() {   
+    return fetch(obtenerUrl("novedades"))
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+
   
 
 
