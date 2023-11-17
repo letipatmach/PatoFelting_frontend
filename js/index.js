@@ -5,7 +5,7 @@ import { Articulos } from "../Articulos.js";
 import {
 
   imprimir,
- mostrarTodosArticulos
+  mostrarTodasLasNovedades
 } from "../utiles.js";
 
 //----------------------variables de mi sitio-------------
@@ -23,12 +23,19 @@ const listarNovedades = (data) => {
   const articulo = data.map(
     (c) =>
       new Articulos (       
-        c.nombre,
-        c.imagenPorDefecto
-       
+        
+        c.idArticulo,
+        c.categoria,
+       c.nombre,
+       c.precio,
+       c.novedad,
+       c.descuento,
+       c.porcentajeDto,
+       c.descripcion,
+       c.imagenPorDefecto,
       )
   );
-  imprimir("novedades", mostrarTodosArticulos(articulo));
+  imprimir("novedades", mostrarTodasLasNovedades(articulo));
 
 };
 
