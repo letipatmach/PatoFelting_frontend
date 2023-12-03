@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PatoFelting - Inicio</title>
+    <!-- enlazo fuentes de google chrome -->
+
+    <!-- font Andada Pro -->
+    <!-- CSS -->
+    <!-- font-family: 'Andada Pro', serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Andada+Pro:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font alegreya sans -->
+
+    <!-- CSS -->
+    <!-- font-family: 'Alegreya Sans', sans-serif;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Iconos -->
+    <script src="//glenthemes.github.io/iconsax/geticons.js"></script>
+    <link href="//glenthemes.github.io/iconsax/style.css" rel="stylesheet" />
+    <link href="iconos/style.css" rel="stylesheet" />
+    <!-- Me enlazo a mi propia hoja de estilos -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!-- -----------------------------------------------HEADER---------------------------------------------------------- -->
+    <div class="fondoInicio">
+      <div class="centrado">
+        <header>
+          <a href="index.html">
+            <img
+              src="img/logo_editado.png"
+              alt="logo con descripción Pato felting fondo verde"
+            />
+          </a>
+          <input type="search" name="" id="" />
+          <div class="iconos">
+            <i class="iconsax prueba" icon-name="heart"></i>
+            <i class="iconsax prueba" icon-name="basket-2"></i>
+            <i class="iconsax prueba" icon-name="user-2"></i>
+          </div>
+        </header>
+      </div>
+    </div>
+    <!-- -------------------------------------------------MENU--------------------------------------------------------- -->
+    <nav class="centrado">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalogo.html" class="itemActivo">Catálogo</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="personalizaciones.html">Personalizaciones</a></li>
+      </ul>
+    </nav>
+    <!-- -----------------------------------------SECCION CATEGORIAS--------------------------------------------------------- -->
+
+    <section class="centrado" id="categorias"></section>
+    <div class="centrado">
+      <!-- -----------------------------------------SECCION FILTROS------------------------------------------------------------ -->
+      <section id="filtros">
+        <div class="fondoInicio">
+          <div>
+            <h2>Precio</h2>
+            <input type="text" />
+            <input type="text" />
+          </div>
+          <div>
+            <h2>Tamaño</h2>
+
+            <input type="radio" name="tamaño" id="3 cm - 5 cm" />
+            <label for="3 cm - 5 cm">3 cm - 5 cm</label>
+            <input type="radio" name="tamaño" id="6 cm - 10 cm" />
+            <label for="6 cm - 10 cm">6 cm - 10 cm</label>
+            <input type="radio" name="tamaño" id="11 cm - 15 cm" />
+            <label for="11 cm - 15 cm">11 cm - 15 cm</label>
+            <input type="radio" name="tamaño" id="más de 15 cm" />
+            <label for="más de 15 cm">más de 15 cm</label>
+          </div>
+          <div>
+            <h2>Descuento</h2>
+            <input type="radio" name="descuento" id="descuento" />
+            <label for="descuento">Artículo con descuento</label>
+          </div>
+        </div>
+        <input type="button" value="Borrar todos" />
+      </section>
+      <!-- -----------------------------------------SECCION ARTICULOS FILTRADOS------------------------------------------------ -->
+      <section id="datosArticulos">
+        <article>
+          <figure>
+            <img src="" alt="" title="" />
+          </figure>
+          <h3>Nombre artículo</h3>
+          <div>
+            <p>Precio:</p>
+            <p>
+              <i class="iconsax prueba" icon-name="heart"></i>
+              <i class="iconsax prueba" icon-name="basket-2"></i>
+            </p>
+          </div>
+        </article>
+      </section>
+    </div>
+    <!-- -----------------------------------------FOOTER--------------------------------------------------------------------- -->
+    <footer></footer>
+    <script src="js/catalogo.js" type="module"></script>
+  </body>
+</html>

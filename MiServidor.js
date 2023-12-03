@@ -24,36 +24,47 @@ const headers = {
 export class MiServidor {
   static urlBase = "http://localhost:3000";
   // static urlBase ="https://patofelting-api.onrender.com";
-  
 
-
- 
-
-  //================================================ARTICULOS ===============================================================
-
-
-
-  // GET /Obtengo listado de todos los articulos
-
-  static obtenerListadoArticulos() {   
-    return fetch(obtenerUrl("listaArticulos"))
-      .then(procesarRespuesta)
-      .catch(manejarErrores);
-  }
+  //================================================HOME ===============================================================
 
   //GET /Obtengo listado de articulos en novedades
 
-  static obtenerNovedades() {   
+  static obtenerNovedades() {
     return fetch(obtenerUrl("novedades"))
       .then(procesarRespuesta)
       .catch(manejarErrores);
   }
 
-  
+  //GET/ Obtengo listado de articulos en ofertas
+  static obtenerOfertas() {
+    return fetch(obtenerUrl("ofertas"))
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+  //================================================CATALOGO ===============================================================
 
+  //GET/ Obtengo listado de categoria
+  static obtenerCategorias() {
+    return fetch(obtenerUrl("categorias"))
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
 
- 
-//*******************************************comentario
- 
+  // GET /Obtengo listado de todos los articulos
+
+  static obtenerListadoArticulos() {
+    return fetch(obtenerUrl("listaArticulos"))
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+
+  // GET /Obtengo detalle de un articulo particular
+
+  static obtenerDetalleArticulo(idArticulo) {
+    return fetch(obtenerUrl(`detalleArticulo/${idArticulo}`))
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+
+  //*******************************************comentario
 }
-

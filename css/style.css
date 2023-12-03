@@ -27,6 +27,13 @@ header img {
     padding: 20px 0px 20px 0px;
     
 }
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
 
 
 .centrado {
@@ -35,4 +42,22 @@ header img {
 }
 img{
     width: 150px;
+}
+.itemActivo{
+    border-bottom: 2px solid #00A859;
+}
+.prueba:hover{
+    --Iconsax-Color: #2d00a8 ;
+  
+}
+
+.iconos{
+    display: inline-block;
+    margin: 50px;
+}
+svg:hover .pruebaFill{
+    fill: red;
+}
+svg:hover .pruebaStroke{
+    stroke:red;
 }
