@@ -1,6 +1,12 @@
 :root {
-  --Iconsax-Size: 20px;
-  --Iconsax-Color: black;
+
+    --verde: #00A859;
+    --blanco: #FEFEFE;
+    --gris: #3A4651;
+    --rojo: #ba1a1a;
+
+  --Iconsax-Size: 24px;
+  --Iconsax-Color: var(--blanco);
 }
 
 @font-face {
