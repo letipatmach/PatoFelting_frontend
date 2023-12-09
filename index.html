@@ -27,11 +27,10 @@
       rel="stylesheet"
     />
 
-<!-- Iconos -->
-<script src="//glenthemes.github.io/iconsax/geticons.js"></script>
-<link href="//glenthemes.github.io/iconsax/style.css" rel="stylesheet">
-<link href="iconos/style.css" rel="stylesheet">
-
+    <!-- Iconos -->
+    <script src="//glenthemes.github.io/iconsax/geticons.js"></script>
+    <link href="//glenthemes.github.io/iconsax/style.css" rel="stylesheet" />
+    <link href="iconos/style.css" rel="stylesheet" />
 
     <!-- Me enlazo a mi propia hoja de estilos -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -41,8 +40,10 @@
     <div class="fondoInicio">
       <div class="centrado">
         <header>
-          <div>
-            <i class="iconsax menuIconos" icon-name="sort"></i>
+          <div class="lineasMenu">
+            <button id="btnAbrirMenu">
+              <i class="iconsax menuIconos" icon-name="sort"></i>
+            </button>
           </div>
           <a href="index.html">
             <img
@@ -50,55 +51,65 @@
               alt="logo con descripción Pato felting fondo verde"
             />
           </a>
-         <div class="mierda">
-          <i class="iconsax menuIconos" icon-name="heart"></i>
-          <i class="iconsax menuIconos" icon-name="basket-2"></i>
-          <i class="iconsax menuIconos" icon-name="user-2"></i>
-        </div>
+          <div class="menuDerecha">
+            <i class="iconsax menuIconos" icon-name="heart"></i>
+            <i class="iconsax menuIconos" icon-name="basket-2"></i>
+            <i class="iconsax menuIconos" icon-name="user-2"></i>
+          </div>
         </header>
       </div>
     </div>
     <!-- -------------------------------------------------MENU--------------------------------------------------------- -->
     <nav class="centrado">
+      <button id="btnCerrarMenu">
+        <i class="iconsax menuIconos" icon-name="close-circle"></i>
+      </button>
       <ul>
-        <li><a href="index.html" class="itemActivo">Home</a></li>
+        <li><a href="index.html" id="itemActivo">Home</a></li>
         <li><a href="catalogo.html">Catálogo</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="personalizaciones.html">Personalizaciones</a></li>
       </ul>
     </nav>
-   
 
     <!-- --------------------------------------------SLIDER------------------------------------------------------------ -->
     <div>
       <div>
-        <p>
-
-        </p>
-        <img src="" alt="">
-        
+        <p>SLIDER</p>
+        <img src="" alt="" />
       </div>
       <div></div>
       <div></div>
     </div>
     <!-- --------------------------------------------SECCION NOVEDADES-------------------------------------------------- -->
 
-    <section class="centrado" >
+    <section class="centrado seccionNovedades">
       <h2>Novedades</h2>
       <div id="novedades"></div>
-     
     </section>
 
     <!-- --------------------------------------------SECCION OFERTAS-------------------------------------------------------->
-   
-    <section class="centrado" >
-      <h2>Ofertas</h2>
-    <div id="ofertas">
 
-    </div>
+    <section class="centrado">
+      <h2>Ofertas</h2>
+      <div id="ofertas"></div>
     </section>
 
-    <footer></footer>
+    <footer >
+      <div class="centrado">
+      <div class="teMail">
+        <i class="iconsax" icon-name="phone"></i>
+        <p>094 959 961</p>
+        <i class="iconsax" icon-name="mail"></i>
+        <p>pato.lop@gmail.com</p>
+      </div>
+      <div class="redes">
+        <a href=""><i class="iconsax menuIconos" icon-name="facebook"></i></a>
+        <a href=""><i class="iconsax menuIconos" icon-name="whatsapp"></i></a>
+        <a href=""><i class="iconsax menuIconos" icon-name="instagram"></i></a>
+      </div>
+    </div>
+    </footer>
     <script src="js/index.js" type="module"></script>
   </body>
 </html>

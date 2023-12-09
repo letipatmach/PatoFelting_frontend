@@ -65,10 +65,15 @@ export class Articulos {
   }
   mostrarNovedades() {
     return `
-    <article>   
-      <img src="${this.imagenPorDefecto}" alt="${this.nombre}" title="${this.nombre}" />
-      <h3>${this.nombre}</h3>    
-     </article>`;
+    <article>  
+      <div>
+        <figure>
+            <img src="${this.imagenPorDefecto}" alt="${this.nombre}" title="${this.nombre}" />
+      
+	      </figure>
+	      <h3>${this.nombre}</h3>
+      </div> 	  
+    </article>`;
   }
 
   mostrarOfertas() {
