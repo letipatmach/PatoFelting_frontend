@@ -258,11 +258,11 @@ svg:hover .pruebaStroke {
     overflow-x: auto;
     scroll-behavior: smooth;
     margin-top: 50px;
-    justify-content: center;
+
 }
 .categoriaScroll{
     flex: 0 0 auto;
-    margin: 10px;
+    
 }
 
 
