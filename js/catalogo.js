@@ -6,7 +6,10 @@ import { Categorias } from "../Categorias.js";
 import {
  imprimir,
  mostrarTodosArticulos,
- mostrarTodasLasCategorias
+ mostrarTodasLasCategorias,
+ mostrarMenu,
+ cerrarMenu
+
 } from "../utiles.js";
 
 //----------------------variables de mi sitio-------------
@@ -14,7 +17,9 @@ import {
 const mostrarError = (error) => {
   console.log("Muestro errores");
 };
-// //------------------ asigno eventos-----------------------------
+
+
+
 
 
 //Listo en pantalla inicial las categorias

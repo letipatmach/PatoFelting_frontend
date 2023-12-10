@@ -27,6 +27,34 @@ export const imprimir = (elemento, contenido) => {
 //   });
 // };
 
+
+const btnMenu = document.querySelector(".lineasMenu");
+const menu=document.querySelector("nav");
+const btnCerrarMenu= document.querySelector("#btnCerrarMenu")
+// //------------------ asigno eventos-----------------------------
+
+btnMenu.addEventListener("click", mostrarMenu);
+btnCerrarMenu.addEventListener("click", cerrarMenu);
+
+function mostrarMenu(){
+  menu.classList.add("visible") 
+}
+function cerrarMenu(){  
+  menu.classList.remove("visible") 
+  
+}
+export {mostrarMenu}
+export {cerrarMenu}
+
+
+function pepe(){
+  console.log("no entiendo porque funciona utiles")
+}
+export{pepe}
+
+
+
+
 // listado de novedades
 export const mostrarTodasLasNovedades = (articulos = [new Articulos()]) => {
   console.log("mostrarNovedades-en utiles");

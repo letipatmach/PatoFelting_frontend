@@ -1,32 +1,12 @@
 import { MiServidor } from "../MiServidor.js";
 import { Articulos } from "../Articulos.js";
 
-import { imprimir, mostrarTodasLasNovedades,mostrarTodasLasOfertas } from "../utiles.js";
+import { imprimir, mostrarTodasLasNovedades,mostrarTodasLasOfertas,mostrarMenu,cerrarMenu } from "../utiles.js";
 
 //----------------------variables de mi sitio-------------
 const mostrarError = (error) => {
   console.log("Muestro errores");
 };
-
-
-const btnMenu = document.querySelector(".lineasMenu");
-const menu=document.querySelector("nav");
-const btnCerrarMenu= document.querySelector("#btnCerrarMenu")
-// //------------------ asigno eventos-----------------------------
-
-btnMenu.addEventListener("click", mostrarMenu);
-btnCerrarMenu.addEventListener("click", cerrarMenu);
-function mostrarMenu(){
-  menu.classList.add("visible") 
-}
-function cerrarMenu(){  
-  menu.classList.remove("visible") 
-  
-}
-
-
-
-
 
 
 

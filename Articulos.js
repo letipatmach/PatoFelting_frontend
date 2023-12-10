@@ -88,7 +88,7 @@ export class Articulos {
         </figure>
         <div>
           <h3>${this.nombre}</h3>
-          <p>Precio:${precioFinal}</p>
+          <p>Precio: $${precioFinal}</p>
         </div>
       </div>
      </article>

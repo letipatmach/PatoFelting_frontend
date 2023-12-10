@@ -22,6 +22,7 @@ body {
     background-color: var(--verde);
 }
 
+/* ----------------------------------------------------------HEADER--------------------------------------------------------- */
 header img {
     width: 150px;
     padding: 20px 0px 20px 0px;
@@ -123,13 +124,15 @@ svg:hover .pruebaStroke {
     stroke: red;
 }
 
+
 /* --------------------------------------------------------------------SLIDER--------------------------------------------------------------- */
-/* ----------------------------------------------------------------SECCION NOVEDADES-------------------------------------------------------- */
-.seccionNovedades h2 {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+.slider p {
+    display: none;
 }
+
+
+/* ----------------------------------------------------------------SECCION NOVEDADES-------------------------------------------------------- */
+
 
 .seccionNovedades h2 {
     color: var(--verde);
@@ -168,7 +171,104 @@ svg:hover .pruebaStroke {
     margin-bottom: 15px;
     color: var(--verde);
 }
+
 /* ----------------------------------------------------------------SECCION OFERTAS---------------------------------------------------------- */
+
+#fondoOfertas {
+    background: url(../img/trama_porcentaje.png) repeat;
+    margin-bottom: 100px;
+
+}
+
+.seccionOfertas h2 {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-left: 1em;
+    padding-top: 1em;
+}
+
+#ofertas {
+    padding: 0 1em 2em 1em;
+    display: grid;
+    grid-template: repeat(3, 1fr)/repeat(1, 1fr);
+    grid-gap: 20px;
+}
+
+
+#ofertas article div div {
+    background-color: var(--verde);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#ofertas article div div p {
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#ofertas article div {
+    padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
+#ofertas article div figure {
+    overflow: hidden;
+
+}
+
+#ofertas article div figure img {
+    width: 100%;
+    object-fit: cover;
+    height: 40vh;
+    margin-top: 2em;
+    box-sizing: border-box;
+    border-radius: 0 25px 0 25px;
+}
+
+#ofertas article div h3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--blanco);
+}
+
+/*------------------------------------------------------ SECCION ICONO FILTRO MOBILE------------------------------------------------------------- */
+.iconoFiltro {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 1em 0 1em 1em;
+}
+
+.iconoFiltro .menuIconos {
+    --Iconsax-Color: var(--verde);
+}
+
+.iconoFiltro p {
+    color: var(--verde);
+}
+
+/* ------------------------------------------------------SECCION CATEGORIAS-----------------------------------------------------------------------*/
+
+#categorias {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin-top: 1em;
+    justify-content: center;
+}
+.categoriaScroll{
+    flex: 0 0 auto;
+}
+
+
+
+
+
+
 
 
 /* --------------------------------------------------------------------FOOTER--------------------------------------------------------------- */
@@ -224,7 +324,8 @@ footer .teMail {
     nav {
         background-color: var(--blanco);
         display: block;
-        width: 100vw;
+        width: 100%;
+        margin-top: 20px;
     }
 
     nav ul {
@@ -263,15 +364,99 @@ footer .teMail {
         display: none;
     }
 
+    /* -----------------------------SLIDER------------------------------------------------------------------------------------------ */
+    .slider {
+        background: RGBA(100, 100, 100, 0.6) url(../img/slider1.jpg) no-repeat center center;
+        background-blend-mode: multiply;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 500px;
+        margin-top: 50px;
+        animation: ciudadSlider 10s ease 3 alternate forwards;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .slider p:first-child {
+        display: block;
+        width: 50%;
+        font-family: 'Andada Pro', serif;
+        font-size: 1.5em;
+        font-weight: bolder;
+        color: var(--blanco);
+        margin-bottom: 2em;
+    }
+
+    .slider p:last-child {
+        display: block;
+        text-align: center;
+    }
+
+    .slider p>a,
+    .slider p>a:link {
+        text-decoration: none;
+        display: inline-block;
+        background-color: var(--verde);
+        border: none;
+        width: 10em;
+        font-size: 1.5em;
+        color: var(--blanco);
+        padding: 0.8em;
+        border-radius: 0 25px 0 25px;
+
+
+    }
+
+    .slider p:last-child a:hover {
+        background-color: var(--gris);
+    }
+
+    @keyframes ciudadSlider {
+        0% {
+            background: RGBA(100, 100, 100, 0.6) url(../img/slider1.jpg) no-repeat center center;
+            background-blend-mode: multiply;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 500px;
+        }
+
+        50% {
+            background: RGBA(100, 100, 100, 0.6) url(../img/slider2.jpg) no-repeat center center;
+            background-blend-mode: multiply;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 500px;
+        }
+
+        100% {
+            background: RGBA(100, 100, 100, 0.6) url(../img/slider3.jpg) no-repeat center center;
+            background-blend-mode: multiply;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 500px;
+        }
+    }
+
     /* -----------------------------SECCION NOVEDADES--------------------------------------------------------------- */
     .seccionNovedades h2 {
         margin-left: 8px;
     }
 
     #novedades {
-        padding: 0em;
+        padding: 0.2em;
         grid-template: repeat(1, 1fr)/repeat(4, 1fr);
         margin-bottom: 20px;
+        grid-gap: 10px;
     }
 
     #novedades article div:hover {
@@ -282,8 +467,58 @@ footer .teMail {
     #novedades article div:hover h3 {
         color: var(--blanco);
     }
-    
 
+    #novedades article div figure img {
+        height: 30vh;
+    }
+
+    /* -----------------------------SECCION OFERTAS--------------------------------------------------------------- */
+    #fondoOfertas {
+        padding: 5em 0 5em 0;
+    }
+
+    .seccionOfertas {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .seccionOfertas h2 {
+
+        font-size: 3em;
+        width: 20%;
+
+    }
+
+    #ofertas {
+        padding: 0.2em;
+        grid-template: repeat(1, 1fr)/repeat(3, 1fr);
+        margin-bottom: 20px;
+        grid-gap: 10px;
+    }
+
+    #ofertas article div:hover,
+    #ofertas article div:hover div {
+        border-radius: 0 25px 0 25px;
+        background-color: var(--gris);
+
+    }
+
+    #ofertas article div:hover h3 {
+        color: var(--blanco);
+    }
+
+    #ofertas article div figure img {
+        height: 30vh;
+    }
+
+
+    /* ---------------------------- SECCION ICONO FILTRO MOBILE------------------------------------------ */
+    .iconoFiltro {
+        display: none;
+    }
+
+    
     /* -----------------------------FOOTER--------------------------------------------------------------- */
 
     footer>div {
@@ -303,15 +538,24 @@ footer .teMail {
         width: 10vw;
     }
 
-   
+    .slider p:first-child {
+        margin-bottom: 5em;
+    }
 
 }
 
 /* -------------------------------------------RESOLUCION 1200---------------------------------------------------------------------------------- */
 @media screen and (min-width: 1200px) {
+    nav.centrado {
+        margin-top: 20px;
+    }
 
     .centrado {
         margin: 0 auto;
+        width: 1200px;
+    }
+
+    .slider p {
         width: 1200px;
     }
 

@@ -15,7 +15,7 @@ export class Categorias {
 
   mostrarListadoCategoria() {
     return `
-    <article>
+    <article class="categoriaScroll">
           <figure>
         <img
           src="${this.imagenCategoria}"

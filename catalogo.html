@@ -38,35 +38,48 @@
     <div class="fondoInicio">
       <div class="centrado">
         <header>
+          <div class="lineasMenu">
+            <button id="btnAbrirMenu">
+              <i class="iconsax menuIconos" icon-name="sort"></i>
+            </button>
+          </div>
           <a href="index.html">
             <img
               src="img/logo_editado.png"
               alt="logo con descripción Pato felting fondo verde"
             />
           </a>
-          <input type="search" name="" id="" />
-          <div class="iconos">
-            <i class="iconsax prueba" icon-name="heart"></i>
-            <i class="iconsax prueba" icon-name="basket-2"></i>
-            <i class="iconsax prueba" icon-name="user-2"></i>
+          <div class="menuDerecha">
+            <i class="iconsax menuIconos" icon-name="heart"></i>
+            <i class="iconsax menuIconos" icon-name="basket-2"></i>
+            <i class="iconsax menuIconos" icon-name="user-2"></i>
           </div>
         </header>
       </div>
     </div>
-    <!-- -------------------------------------------------MENU--------------------------------------------------------- -->
+    <!-- -------------------------------------------------MENU------------------------------------------------------------- -->
     <nav class="centrado">
+      <button id="btnCerrarMenu">
+        <i class="iconsax menuIconos" icon-name="close-circle"></i>
+      </button>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="catalogo.html" class="itemActivo">Catálogo</a></li>
+        <li><a href="catalogo.html" id="itemActivo">Catálogo</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="personalizaciones.html">Personalizaciones</a></li>
       </ul>
     </nav>
+    <!-- ----------------------------------------ICONO FILTRO---------------------------------------------------------------. -->
+    <div class="iconoFiltro">
+      <p>Filtros</p>
+      <i class="iconsax menuIconos" id="filtro" icon-name="filter-search"></i>
+    </div>
+
     <!-- -----------------------------------------SECCION CATEGORIAS--------------------------------------------------------- -->
 
     <section class="centrado" id="categorias"></section>
     <div class="centrado">
-      <!-- -----------------------------------------SECCION FILTROS------------------------------------------------------------ -->
+      <!-- -----------------------------------------SECCION FILTROS---------------------------------------------------------- -->
       <section id="filtros">
         <div class="fondoInicio">
           <div>
@@ -111,8 +124,28 @@
         </article>
       </section>
     </div>
-    <!-- -----------------------------------------FOOTER--------------------------------------------------------------------- -->
-    <footer></footer>
+    <!-- --------------------------------------------FOOTER-------------------------------------------------------------------->
+    <footer>
+      <div class="centrado">
+        <div class="teMail">
+          <i class="iconsax" icon-name="phone"></i>
+          <p>094 959 961</p>
+          <i class="iconsax" icon-name="mail"></i>
+          <p>pato.lop@gmail.com</p>
+        </div>
+        <div class="redes">
+          <a href="https://www.facebook.com/PatoFelting/"
+            ><i class="iconsax menuIconos" icon-name="facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/pato_felting/?hl=es"
+            ><i class="iconsax menuIconos" icon-name="instagram"></i
+          ></a>
+          <a href="https://wa.me/59894959961"
+            ><i class="iconsax menuIconos" icon-name="whatsapp"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
     <script src="js/catalogo.js" type="module"></script>
   </body>
 </html>
