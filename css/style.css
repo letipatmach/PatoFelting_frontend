@@ -253,18 +253,22 @@ svg:hover .pruebaStroke {
 
 #categorias {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 20px;
+    flex-wrap: nowrap;  
     overflow-x: auto;
     scroll-behavior: smooth;
     margin-top: 50px;
-
-}
+ }
 .categoriaScroll{
     flex: 0 0 auto;
+    margin: 10px;
     
 }
-
+.categoriaScroll figure figcaption{
+    text-align: center;
+}
+#categorias::-webkit-scrollbar {
+    display: none;
+  }
 
 
 
@@ -518,7 +522,9 @@ footer .teMail {
     .iconoFiltro {
         display: none;
     }
-
+     /* ---------------------------- SECCION CATEGORIAS------------------------------------------ */
+    #categorias {
+        justify-content: center;}
     
     /* -----------------------------FOOTER--------------------------------------------------------------- */
 
