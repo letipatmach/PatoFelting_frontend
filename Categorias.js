@@ -15,9 +15,10 @@ export class Categorias {
 
   mostrarListadoCategoria() {
     return `
-    <article class="categoriaScroll">
-          <figure>
+    <article class="categoriaScroll" id="${this.nombreCategoria}">
+          <figure >
         <img
+        id="img${this.nombreCategoria}" class=""
           src="${this.imagenCategoria}"
           alt="${this.nombreCategoria}"
           title="${this.nombreCategoria}"

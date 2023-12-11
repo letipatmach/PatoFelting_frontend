@@ -33,8 +33,12 @@ const menu=document.querySelector("nav");
 const btnCerrarMenu= document.querySelector("#btnCerrarMenu")
 // //------------------ asigno eventos-----------------------------
 
-btnMenu.addEventListener("click", mostrarMenu);
-btnCerrarMenu.addEventListener("click", cerrarMenu);
+if(btnMenu){
+  btnMenu.addEventListener("click", mostrarMenu);
+  btnCerrarMenu.addEventListener("click", cerrarMenu);
+}
+//btnMenu.addEventListener("click", mostrarMenu);
+
 
 function mostrarMenu(){
   menu.classList.add("visible") 
@@ -99,11 +103,12 @@ export const mostrarTodosArticulos = (articulos = [new Articulos()]) => {
   return listado;
 };
 //Detalle de un articulo
-export const mostrarDetalleArticulo = (detalle = new Articulos()) => {
-  let mostrar = detalle.mostrarDetalleArticulo();
+ 
+
+export const mostrarDetalleA = (detalleA = new Articulos()) => {
+  let mostrar = detalleA.mostrarDetalleArticulo();
   return mostrar;
 };
-
 
 
 

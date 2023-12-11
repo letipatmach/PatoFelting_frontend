@@ -10,10 +10,10 @@ export class Articulos {
   imagenPorDefecto;
 
   constructor(
-    idArticulo = Number,
+    idArticulo = "",
     categoria = "",
     nombre = "",
-    precio = Number,
+    precio = "",
     novedad = "",
     descuento = 0,
     porcentajeDto = "",
@@ -21,26 +21,27 @@ export class Articulos {
     imagenPorDefecto = ""
   ) {
     this.idArticulo = idArticulo;
-    (this.categoria = categoria),
-      (this.nombre = nombre),
-      (this.precio = precio),
-      (this.novedad = novedad),
-      (this.descuento = descuento),
-      (this.porcentajeDto = porcentajeDto),
-      (this.descripcion = descripcion),
-      (this.imagenPorDefecto = imagenPorDefecto);
+    this.categoria = categoria,
+      this.nombre = nombre,
+      this.precio = precio,
+      this.novedad = novedad,
+      this.descuento = descuento,
+      this.porcentajeDto = porcentajeDto,
+      this.descripcion = descripcion,
+      this.imagenPorDefecto = imagenPorDefecto;
   }
 
   mostrarListadoArticulos() {
     return `
     <article>
+    <div>
     <figure>
     <a href="detalle.html?id=${this.idArticulo}"><img src="${this.imagenPorDefecto}" alt="${this.nombre}" title="${this.nombre}" /></a>
       
     </figure>
     <h3>${this.nombre}</h3>
     <div>
-      <p>Precio:${this.precio}</p>
+      <p>Precio: $${this.precio}</p>
       <div>    
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path  class="pruebaFill" d="M12 21.6516C11.69 21.6516 11.39 21.6116 11.14 21.5216C7.32 20.2116 1.25 15.5616 1.25 8.69156C1.25 5.19156 4.08 2.35156 
@@ -59,6 +60,7 @@ export class Articulos {
           <path class="pruebaStroke" d="M8.49451 12H8.50349" stroke="#00A859" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
       </div>
+    </div>
     </div>
   </article>
       `;
@@ -95,23 +97,13 @@ export class Articulos {
      `;
   }
   mostrarDetalleArticulo() {
+    const pr = this.nombre;
+    console.log("mostrarDetalleArticulo")
+    console.log("mostrarDetalleArticulo-Precio"+pr)
+    
     return `
-    <div>
-   
-    <p>Categoría: ${this.categoria}</p>
-    <p>Nombre: ${this.nombre}</p>
-    <p>Precio Venta: $ ${this.precio}</p>
-    <p>Humedad de Riego: ${this.humedad} %</p>
-    <p>${this.tipoCaracteristica}: ${this.caracteristica}</p>
-    <p>
-      <input type="button" class="btnCerrarDetalle" value="Cerrar detalle" id="btnCerrarDetalle" />
-    </p>
-  </div>
-  <div>
-    <figure>
-      <img src="${this.imagen}" alt="${this.nombre}" title="${this.nombre}" />
-    </figure>
-  </div>
+    <p>Categoría: ${this.nombre}</p>
+    <p>Precio: $${this.precio}</p>
       `;
   }
 }

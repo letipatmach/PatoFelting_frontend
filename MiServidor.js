@@ -6,7 +6,7 @@ const manejarErrores = (error = new Error("Error desconocido")) => {
 
 const obtenerUrl = (ruta) => `${MiServidor.urlBase}/${ruta}`;
 
-const procesarRespuesta = (res) => {
+const procesarRespuesta = (res) => {   
   return res.json().then((data) => {
     if (data.error) {
       throw new Error(data.mensaje);
@@ -22,8 +22,8 @@ const headers = {
 };
 
 export class MiServidor {
-  // static urlBase = "http://localhost:3000";
-  static urlBase ="https://patofelting-api.onrender.com";
+  static urlBase = "http://localhost:3000";
+  // static urlBase ="https://patofelting-api.onrender.com";
 
   //================================================HOME ===============================================================
 
@@ -52,8 +52,25 @@ export class MiServidor {
 
   // GET /Obtengo listado de todos los articulos
 
-  static obtenerListadoArticulos() {
-    return fetch(obtenerUrl("listaArticulos"))
+  static obtenerListadoArticulos(opciones = {}) {
+    const queryParams = new URLSearchParams({});
+    
+    if (opciones.filtroCategoria == "") {
+    } else if (opciones.filtroCategoria) {
+      queryParams.set("categoria", opciones.filtroCategoria);
+    }
+
+    if (opciones.precioMinimo == "") {    
+    } else if (opciones.precioMinimo) {
+       queryParams.set("precioMinimo", opciones.precioMinimo);
+    }
+
+    if (opciones.precioMaximo == "") {    
+    } else if (opciones.precioMaximo) {
+       queryParams.set("precioMaximo", opciones.precioMaximo);
+    }
+    
+    return fetch(obtenerUrl("listaArticulos?"+queryParams))
       .then(procesarRespuesta)
       .catch(manejarErrores);
   }
@@ -61,6 +78,9 @@ export class MiServidor {
   // GET /Obtengo detalle de un articulo particular
 
   static obtenerDetalleArticulo(idArticulo) {
+    console.log("Buscando el articulo: "+idArticulo)
+    console.log("Ruta: "+obtenerUrl(`detalleArticulo/${idArticulo}`))
+   
     return fetch(obtenerUrl(`detalleArticulo/${idArticulo}`))
       .then(procesarRespuesta)
       .catch(manejarErrores);

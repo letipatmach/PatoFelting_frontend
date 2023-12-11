@@ -18,10 +18,6 @@ body {
     font-family: 'Alegreya Sans', sans-serif;
 }
 
-.fondoInicio {
-    background-color: var(--verde);
-}
-
 /* ----------------------------------------------------------HEADER--------------------------------------------------------- */
 header img {
     width: 150px;
@@ -57,6 +53,7 @@ header {
 img {
     width: 150px;
 }
+
 
 /* ------------------------------------------------------------------------ MENU------------------------------------------------------------- */
 #itemActivo {
@@ -116,13 +113,6 @@ nav button {
     --Iconsax-Color: var(--gris);
 }
 
-svg:hover .pruebaFill {
-    fill: red;
-}
-
-svg:hover .pruebaStroke {
-    stroke: red;
-}
 
 
 /* --------------------------------------------------------------------SLIDER--------------------------------------------------------------- */
@@ -247,33 +237,220 @@ svg:hover .pruebaStroke {
 
 .iconoFiltro p {
     color: var(--verde);
+    padding-right: 10px;
 }
 
 /* ------------------------------------------------------SECCION CATEGORIAS-----------------------------------------------------------------------*/
 
 #categorias {
     display: flex;
-    flex-wrap: nowrap;  
+    flex-wrap: nowrap;
     overflow-x: auto;
     scroll-behavior: smooth;
-    margin-top: 50px;
- }
-.categoriaScroll{
+    margin-top: 2em;
+}
+
+.categoriaScroll {
     flex: 0 0 auto;
     margin: 10px;
-    
 }
-.categoriaScroll figure figcaption{
+
+.categoriaScroll figure figcaption {
     text-align: center;
+    font-weight: bold;
+    margin: 0.2em 0 1em 0;
 }
+
 #categorias::-webkit-scrollbar {
     display: none;
-  }
+}
+
+.categoriaScroll figure img {
+    border-radius: 0 25px 0 25px;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------------SECCION FILTROS-----------------------------------------------------------------------*/
+
+.filtroMobile {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    place-items: center;
+    /* cuando se visualice la modal hay que poner grid */
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 9000;
+    
+}
+
+.fondoInicio {
+    background-color: var(--verde);
+    padding: 3em 2em 3em 2em;
+    margin-bottom: 1em;
+   
+}
+
+.filtroPrecio {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filtroPrecio>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.filtroPrecio h2 {
+    color: var(--blanco);
+    text-align: center;
+}
+
+.filtroPrecio>div input[type="number"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--blanco);
+    border-radius: 2px;
+    margin-bottom: 2em;
+    color: var(--blanco);
+}
+
+.filtroPrecio>div input[type="number"]:first-child {
+    margin-right: 1.5em;
+}
+
+.filtroPrecio>div input[type="number"]:focus {
+    color: var(--blanco);
+    outline: none;
+}
+
+.filtroPrecio>div input[type="number"]::placeholder {
+    color: var(--blanco);
+    text-align: center;
+
+}
+
+.filtroTamaño,
+.filtroDto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filtroTamaño h2,
+.filtroDto h2 {
+    color: var(--blanco);
+    text-align: center;
+}
+
+.filtroDto {
+    margin-top: 1em;
+}
+
+.filtroTamaño>div,
+.filtroDto div {
+    color: var(--blanco);
+}
+
+.filtroTamaño>div>div,
+.filtroDto div {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtroTamaño>div>div input[type="radio"],
+.filtroDto div input[type="checkbox"] {
+    display: none;
+}
+
+.filtroTamaño>div>div label,
+.filtroDto div label {
+    padding-left: 10px;
+}
+
+.filtroTamaño>div>div label:hover,
+.filtroDto div label:hover {
+    color: var(--gris);
+}
+
+.filtroTamaño>div div>input[type="radio"]:checked+label,
+.filtroDto div input[type="checkbox"]:checked+label {
+    border-bottom: 2px solid var(--blanco);
+    border-top: 2px solid var(--blanco);
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.filtroMobile input[type="button"] {
+    background-color: var(--verde);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: none;
+    color: var(--blanco);
+    width: 50%;
+    font-size: 1.3em;
+}
+
+/* ------------------------------------------------------SECCION ARTICULOS------------------------------*/
+
+.articulos {
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    margin-bottom: 100px;
+}
+
+.articulos article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.articulos article>div {
+    padding: 1em;
+}
+
+.articulos article>div h3 {
+    margin: 0.5em auto;
+}
 
 
+.articulos article>div h3,
+.articulos article>div div {
+    color: var(--verde);
+}
 
+.articulos article>div div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
+}
 
+.articulos article div div p {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.articulos article figure img {
+    width: 100%;
+}
+
+.articulos article div div div {
+
+    width: 15%;
+}
 
 
 /* --------------------------------------------------------------------FOOTER--------------------------------------------------------------- */
@@ -317,6 +494,9 @@ footer .teMail {
 /* -------------------------------------------------RESOLUCION 768------------------------------------------------------------------------------ */
 @media screen and (min-width: 768px) {
 
+
+  
+    
     /* -----------------------------MENU--------------------------------------------------------------- */
     #itemActivo {
 
@@ -412,8 +592,6 @@ footer .teMail {
         color: var(--blanco);
         padding: 0.8em;
         border-radius: 0 25px 0 25px;
-
-
     }
 
     .slider p:last-child a:hover {
@@ -522,10 +700,104 @@ footer .teMail {
     .iconoFiltro {
         display: none;
     }
-     /* ---------------------------- SECCION CATEGORIAS------------------------------------------ */
+
+    /* ---------------------------- SECCION CATEGORIAS------------------------------------------ */
     #categorias {
-        justify-content: center;}
-    
+        justify-content: center;
+        margin-top: 3em;
+    }
+
+    .categoriaScroll figure img:hover {
+        border: 5px solid var(--verde)
+    }
+
+    .elementoActivo {
+        border: 5px solid var(--verde);
+     
+        
+    }
+
+    /* ------------------------------------------------------SECCION FILTROS------------------------------*/
+    .filtroMobile {
+        width: 50%;
+        height: 50%;
+        background-color: transparent;
+        position: static;
+        top: 0;
+        left: 0;
+        place-items: center;
+        /* cuando se visualice la modal hay que poner grid */
+        /* display: flex; */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        z-index: 0;
+    }
+
+    .fondoInicio {
+        background-color: var(--verde);
+        padding: 1em;
+        margin-bottom: 1em;
+
+    }
+
+    /* ------------------------------------------------------SECCION ARTICULOS------------------------------ */
+
+    .dosSecciones {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        margin-top: 50px;
+        justify-content: space-between;
+    }
+
+    .articulos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2em;
+        height: 50%;
+        margin-bottom: 100px;
+        justify-content: flex-end;
+        align-items: flex-start;
+        width: 60%;
+    }
+
+    .articulos article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .articulos article:first-child div {
+        padding: 0 1em 1em 1em;
+    }
+
+    svg:hover .pruebaFill {
+        fill: var(--blanco);
+    }
+
+    svg:hover .pruebaStroke {
+        stroke: var(--blanco);
+        ;
+    }
+    .articulos article:hover>div {
+        background-color: var(--verde); 
+        border-radius: 0 25px 0 0;   
+         }
+       .articulos article:hover>div h3, .articulos article:hover>div div ,.articulos article:hover>div div svg .pruebaFill {
+           color:var(--blanco);
+           fill: var(--blanco);
+          
+       }  
+       .articulos article:hover>div div svg .pruebaStroke{
+      
+           stroke: var(--blanco);
+           ;
+       }
+
+
+
+
     /* -----------------------------FOOTER--------------------------------------------------------------- */
 
     footer>div {
@@ -547,6 +819,38 @@ footer .teMail {
 
     .slider p:first-child {
         margin-bottom: 5em;
+    }
+
+    .articulos article div {
+        padding: 0;
+    }
+
+    .filtroMobile {
+        width: 30%;
+    }
+
+    .articulos {
+        gap: 2em;
+        justify-content: flex-start;
+        width: 70%;
+    }
+
+    .articulos article {
+        width: 30%;      
+    }
+   
+ 
+
+
+    .articulos article div div div{
+        width: 25%;      
+    }
+ 
+    #datosArticulos article>div {
+        padding: 5px;
+    }
+    .articulos article figure img {
+        border-radius: 0 25px 0 25px;
     }
 
 }
