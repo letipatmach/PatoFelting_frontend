@@ -1,8 +1,11 @@
 import { MiServidor } from "../MiServidor.js";
 import { Articulos } from "../Articulos.js";
+import { Imagenes } from "../Imagenes.js";
 import {
     imprimir,
-    mostrarDetalleA
+    mostrarDetalleA,
+    mostrarDetalleI,
+    mostrarImgPrincipal
    
    } from "../utiles.js";
 
@@ -23,7 +26,7 @@ console.log("Viendo el id"+idRecibido)
 
 //muestro detalle de un articulo en particular
 const listarDetalle = (data) => {
-  console.log("La Data"+data.length)
+  console.log("La Data Articulo"+data.length)
   console.log("idArticulo"+data.precio)
   const deta = new Articulos(
     data.idArticulo,
@@ -38,12 +41,54 @@ const listarDetalle = (data) => {
   );
   imprimir("detalle", mostrarDetalleA(deta));
 
-  document.querySelectorAll(".btnCerrarDetalle").forEach((item) => {
-    item.addEventListener("click", (e) => {
-      cerrarDetalle();
-    });
-  });
+  
 };
+
+
+//muestro Imagen Princial en Detalle de Articulo
+const listarImagenPrincipal = (data) => {
+  console.log("La Data Articulo"+data.length)
+  console.log("idArticulo"+data.precio)
+  const deta = new Articulos(
+    data.idArticulo,
+    data.categoria,
+    data.nombre,
+    data.precio,
+    data.novedad,
+    data.descuento,
+    data.porcentajeDto,
+    data.descripcion,
+    data.imagenPorDefecto
+  );
+  imprimir("imgPrincipal", mostrarImgPrincipal(deta));
+
+  
+};
+
+// Muestro Imagenes en Minuatura Detalle Articulo 
+const listarImagenes = (data) => {
+  console.log(data);
+  const imagenes = data.map(
+    (c) =>
+      new Imagenes(
+        c.idImagen,
+        c.idArticulo,
+        c.rutaImagen
+      )
+  );
+  imprimir("imgMiniaturas", mostrarDetalleI(imagenes));
+
+  document.querySelectorAll(".imgMin").forEach((imgMin) => {
+    imgMin.addEventListener("click", (e) => {
+      const idImg = imgMin.id;
+      const ruta = imgMin.getAttribute("src");
+      mostrarEnPrincipal(idImg,ruta);
+      
+    });
+  });     
+};
+
+
 
 if(idRecibido>0){
   let idBuscar = idRecibido;
@@ -51,10 +96,36 @@ if(idRecibido>0){
   //MiServidor.obtenerDetalleArticulo(idBuscar).then(listarDetalle).catch(mostrarError);
   MiServidor.obtenerDetalleArticulo(idBuscar)
   .then((data) => {
-    console.log("Datos del servidor:", data);
     listarDetalle(data);
   })
   .catch(mostrarError);
+
+  MiServidor.obtenerImagenes(idBuscar)
+  .then((data) => {
+    listarImagenes(data);
+  })
+  .catch(mostrarError);
+ 
+  MiServidor.obtenerDetalleArticulo(idBuscar)
+  .then((data) => {
+    listarImagenPrincipal(data);
+  })
+  .catch(mostrarError);
+
+
+
+
 }else{
   console.log("No existe el id")
+}
+
+
+//---- Pasar de Miniatura a Principal
+
+function mostrarEnPrincipal(idImg,ruta){
+  console.log("Debo mostrar la img "+idImg+" Con la Ruta "+ruta);
+  const imgPrincipal = document.querySelector("#imgPrincipal");
+  imgPrincipal.innerHTML = `<img src="${ruta}">`;
+  
+
 }

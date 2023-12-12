@@ -1,14 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <section class="datos" id="detalle">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PatoFelting - Inicio</title>
+    <!-- enlazo fuentes de google chrome -->
 
+    <!-- font Andada Pro -->
+    <!-- CSS -->
+    <!-- font-family: 'Andada Pro', serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Andada+Pro:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font alegreya sans -->
+
+    <!-- CSS -->
+    <!-- font-family: 'Alegreya Sans', sans-serif;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos -->
+    <script src="//glenthemes.github.io/iconsax/geticons.js"></script>
+    <link href="//glenthemes.github.io/iconsax/style.css" rel="stylesheet" />
+    <link href="iconos/style.css" rel="stylesheet" />
+
+    <!-- Me enlazo a mi propia hoja de estilos -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!-- -----------------------------------------------HEADER---------------------------------------------------------------------------- -->
+    <div class="fondoInicio">
+      <div class="centrado">
+        <header>
+          <div class="lineasMenu">
+            <button id="btnAbrirMenu">
+              <i class="iconsax menuIconos" icon-name="sort"></i>
+            </button>
+          </div>
+          <a href="index.html">
+            <img
+              src="img/logo_editado.png"
+              alt="logo con descripción Pato felting fondo verde"
+            />
+          </a>
+          <div class="menuDerecha">
+            <i class="iconsax menuIconos" icon-name="heart"></i>
+            <i class="iconsax menuIconos" icon-name="basket-2"></i>
+            <i class="iconsax menuIconos" icon-name="user-2"></i>
+          </div>
+        </header>
+      </div>
+    </div>
+    <!-- -------------------------------------------------MENU------------------------------------------------------------------------------- -->
+    <nav class="centrado">
+      <button id="btnCerrarMenu">
+        <i class="iconsax menuIconos" icon-name="close-circle"></i>
+      </button>
+      <ul>
+        <li><a href="index.html" id="itemActivo">Home</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="personalizaciones.html">Personalizaciones</a></li>
+      </ul>
+    </nav>
+    <!-- -------------------------------------------------SECCION DETALLE DEL ARTICULO--------------------------------------------------------- -->
+    <section class="datos centrado">
+      <!-- agregr id id="imagenes" al div para que funcione por java script -->
+      <div class="contenedorImagenes">
+        <div class="imgPrincipal" id="imgPrincipal">
+         
+        </div>
+        <div class="imgMiniaturas" id="imgMiniaturas">
+         
+        </div>
+      </div>
+
+      <div class="descripcion" id="detalle">
+        
+      </div>
     </section>
+    <!-- -------------------------------------------------SECCION VENTA CRUZADA DETALLE--------------------------------------------------------- -->
+    <section class="centrado vtaCruzadaDetalle">
+      <div class="tituloVtaDetalle">
+        <hr />
+        <h2>Quienes vieron este producto compraron</h2>
+        <hr />
+      </div>
+      <div class="articulosVtaDetalle">
+        <article>
+          <div>
+            <figure>
+              <img
+                src="./img/detalleArticulo/Personajes/Squirtle/squirtle_1.jpeg"
+                alt=""
+              />
+            </figure>
+            <div>
+              <h3>Nombre Pokemon 1</h3>
+              <div class="precioIcono">
+                <p>Precio: $2000</p>
+                <div>
+                  <i class="iconsax menuIconos" icon-name="heart"></i>
+                  <i class="iconsax menuIconos" icon-name="basket-2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article>
+          <div>
+            <figure>
+              <img
+                src="./img/detalleArticulo/Personajes/Squirtle/squirtle_1.jpeg"
+                alt=""
+              />
+            </figure>
+            <div>
+              <h3>Nombre Pokemon 2</h3>
+              <div class="precioIcono">
+                <p>Precio: $500</p>
+                <div>
+                  <i class="iconsax menuIconos" icon-name="heart"></i>
+                  <i class="iconsax menuIconos" icon-name="basket-2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article>
+          <div>
+            <figure>
+              <img
+                src="./img/detalleArticulo/Personajes/Squirtle/squirtle_2.jpeg"
+                alt=""
+              />
+            </figure>
+            <div>
+              <h3>Nombre Pokemon 3</h3>
+              <div class="precioIcono">
+                <p>Precio: $200</p>
+                <div>
+                  <i class="iconsax menuIconos" icon-name="heart"></i>
+                  <i class="iconsax menuIconos" icon-name="basket-2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article>
+          <div>
+            <figure>
+              <img
+                src="./img/detalleArticulo/Personajes/Squirtle/squirtle_3.jpg"
+                alt=""
+              />
+            </figure>
+            <div>
+              <h3>Nombre Pokemon 4</h3>
+              <div class="precioIcono">
+                <p>Precio: $6F00</p>
+                <div>
+                  <i class="iconsax menuIconos" icon-name="heart"></i>
+                  <i class="iconsax menuIconos" icon-name="basket-2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- --------------------------------------------FOOTER------------------------------------------------------------------------------------------->
+    <footer>
+      <div class="centrado">
+        <div class="teMail">
+          <i class="iconsax" icon-name="phone"></i>
+          <p>094 959 961</p>
+          <i class="iconsax" icon-name="mail"></i>
+          <p>pato.lop@gmail.com</p>
+        </div>
+        <div class="redes">
+          <a href="https://www.facebook.com/PatoFelting/"
+            ><i class="iconsax menuIconos" icon-name="facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/pato_felting/?hl=es"
+            ><i class="iconsax menuIconos" icon-name="instagram"></i
+          ></a>
+          <a href="https://wa.me/59894959961"
+            ><i class="iconsax menuIconos" icon-name="whatsapp"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
     <script src="js/detalle.js" type="module"></script>
-</body>
+  </body>
 </html>

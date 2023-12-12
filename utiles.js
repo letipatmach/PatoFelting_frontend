@@ -1,4 +1,5 @@
 import { Articulos } from "./Articulos.js";
+import { Imagenes } from "./Imagenes.js";
 import { MiServidor } from "./MiServidor.js";
 
 export const imprimir = (elemento, contenido) => {
@@ -110,7 +111,23 @@ export const mostrarDetalleA = (detalleA = new Articulos()) => {
   return mostrar;
 };
 
+export const mostrarImgPrincipal = (imgPrincipal = new Articulos()) => {
+  let mostrar = imgPrincipal.mostrarImagenPrincipal();
+  return mostrar;
+};
 
+
+
+//Listado de articulos
+export const mostrarDetalleI = (imagenes = [new Imagenes()]) => {
+  console.log("Esta llamando Imagenes");
+  let listado = "";
+  imagenes.forEach((c) => {
+    listado += c.mostrarImagenes();
+  });
+
+  return listado;
+};
 
 
 

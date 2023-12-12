@@ -96,14 +96,33 @@ export class Articulos {
      </article>
      `;
   }
-  mostrarDetalleArticulo() {
-    const pr = this.nombre;
-    console.log("mostrarDetalleArticulo")
-    console.log("mostrarDetalleArticulo-Precio"+pr)
-    
+  mostrarDetalleArticulo() {     
     return `
-    <p>Categoría: ${this.nombre}</p>
-    <p>Precio: $${this.precio}</p>
-      `;
+    <div>
+    <div class="nombrePrecio">
+      <h2>${this.nombre}</h2>
+      <p>Precio: $ ${this.precio}</p>
+    </div>
+    <p>
+    ${this.descripcion}
+    </p>
+  </div>
+  <div class="botonera">
+    <input type="button" value="Añadir a Carrito" />
+    <input type="button" value="Consultar Personalizacion" />
+    <input type="button" value="Añadir Lista de deseos" />
+  </div>
+         `;
   }
+
+  mostrarImagenPrincipal() {    
+        
+    return `
+    <img
+    src="${this.imagenPorDefecto}"
+    alt=""
+  />
+         `;
+  }
+
 }

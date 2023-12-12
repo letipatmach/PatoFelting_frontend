@@ -86,5 +86,17 @@ export class MiServidor {
       .catch(manejarErrores);
   }
 
+
+  static obtenerImagenes(opciones = {}) {
+
+    const queryParams = new URLSearchParams({});     
+    queryParams.set("idArticulo", opciones);
+   
+    return fetch(obtenerUrl("listaImagen?"+queryParams))
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+ 
+
   //*******************************************comentario
 }

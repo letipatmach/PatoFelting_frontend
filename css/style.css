@@ -50,9 +50,6 @@ header {
     border: none;
 }
 
-img {
-    width: 150px;
-}
 
 
 /* ------------------------------------------------------------------------ MENU------------------------------------------------------------- */
@@ -154,6 +151,9 @@ nav button {
     margin-top: 2em;
     box-sizing: border-box;
     border-radius: 0 25px 0 25px;
+
+
+
 }
 
 #novedades article div h3 {
@@ -268,6 +268,7 @@ nav button {
 .categoriaScroll figure img {
     border-radius: 0 25px 0 25px;
     box-sizing: border-box;
+    width: 150px;
 }
 
 /* ------------------------------------------------------SECCION FILTROS-----------------------------------------------------------------------*/
@@ -286,14 +287,21 @@ nav button {
     flex-direction: column;
     justify-content: center;
     z-index: 9000;
-    
+
 }
+
+
+
 
 .fondoInicio {
     background-color: var(--verde);
+
+
+}
+
+.filtroMobile>.fondoInicio {
     padding: 3em 2em 3em 2em;
     margin-bottom: 1em;
-   
 }
 
 .filtroPrecio {
@@ -334,7 +342,6 @@ nav button {
 .filtroPrecio>div input[type="number"]::placeholder {
     color: var(--blanco);
     text-align: center;
-
 }
 
 .filtroTamaño,
@@ -435,6 +442,7 @@ nav button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 5px;
 
 }
 
@@ -448,10 +456,187 @@ nav button {
 }
 
 .articulos article div div div {
-
-    width: 15%;
+    width: 20%;
 }
 
+/* -----------------------------------------------------------DETALLE ARTICULO------------------------------------------------------------- */
+.datos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.contenedorImagenes {
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+
+.imgPrincipal {
+    margin-bottom: 1.5em;
+    
+}
+
+.imgPrincipal img {
+    width: 100%;
+     
+    border-radius: 0 50px 0 50px;
+}
+
+.imgMiniaturas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.imgMiniaturas img {
+    width: 30%;
+    border-radius: 0 25px 0 25px;
+}
+
+.descripcion {
+    padding: 0 1em;
+}
+
+.descripcion h2,
+.descripcion p {
+    margin-bottom: 1em;
+}
+
+.descripcion>div>p {
+    display: none;
+}
+
+.nombrePrecio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--verde);
+}
+
+.nombrePrecio p {
+    font-weight: bold;
+    font-size: 1.3em;
+
+}
+
+.botonera {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.botonera input[type="button"] {
+    width: 100%;
+    text-align: center;
+    padding: 0.5em;
+    margin: 0.5em auto;
+    font-size: 1.2em;
+}
+
+.botonera input[type="button"]:first-child {
+    background-color: var(--verde);
+    border: none;
+    color: var(--blanco);
+    border-radius: 0 20px 0 20px;
+}
+
+.botonera input[type="button"]:last-child {
+    background-color: transparent;
+    border: none;
+    color: var(--verde);
+    background: url(../iconos/heart.svg) no-repeat 20% center;
+}
+
+.botonera input[type="button"]:nth-of-type(2) {
+    background-color: transparent;
+    border: 1px solid var(--verde);
+    color: var(--verde);
+    border-radius: 0 20px 0 20px;
+
+}
+
+/* <!-- -------------------------------------------------SECCION VENTA CRUZADA DETALLE-------------------------------------------------- --> */
+
+.vtaCruzadadetalle {
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloVtaDetalle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.tituloVtaDetalle h2 {
+    color: var(--gris);
+    width: 60%;
+    text-align: center;
+    margin: 0 .2em 0 0.2em;
+}
+
+.tituloVtaDetalle hr {
+    width: 20%;
+    border: none;
+    border-top: 1px solid var(--gris);
+}
+
+.articulosVtaDetalle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 2em;
+}
+
+.articulosVtaDetalle article {
+    width: 40%;
+
+}
+
+.articulosVtaDetalle article div figure img {
+    width: 100%;
+    height: 30vh;
+    border-radius: 0 25px 0 25px;
+}
+
+.articulosVtaDetalle article>div:last-child h3,
+.articulosVtaDetalle article>div:last-child p {
+    margin-top: 0.5em;
+
+}
+
+.articulosVtaDetalle article>div:last-child p {
+    margin-bottom: 1em;
+}
+
+.precioIcono {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.precioIcono .menuIconos {
+    --Iconsax-Color: var(--gris);
+    margin: 0.5em 0 1em 0;
+}
+
+.precioIcono p {
+    font-weight: bold;
+    font-size: 1.2em;
+}
 
 /* --------------------------------------------------------------------FOOTER--------------------------------------------------------------- */
 
@@ -470,6 +655,7 @@ footer div {
     justify-content: space-between;
     flex-direction: row;
 }
+
 
 footer .teMail {
     display: none;
@@ -494,9 +680,6 @@ footer .teMail {
 /* -------------------------------------------------RESOLUCION 768------------------------------------------------------------------------------ */
 @media screen and (min-width: 768px) {
 
-
-  
-    
     /* -----------------------------MENU--------------------------------------------------------------- */
     #itemActivo {
 
@@ -713,42 +896,40 @@ footer .teMail {
 
     .elementoActivo {
         border: 5px solid var(--verde);
-     
-        
+
+
     }
 
-    /* ------------------------------------------------------SECCION FILTROS------------------------------*/
+    /* ------------------------------------------SECCION FILTROS------------------------------------------*/
     .filtroMobile {
-        width: 50%;
+        width: 60%;
         height: 50%;
         background-color: transparent;
         position: static;
-        top: 0;
-        left: 0;
-        place-items: center;
-        /* cuando se visualice la modal hay que poner grid */
+        /* cuando se visualice la modal hay que poner flex */
         /* display: flex; */
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         z-index: 0;
+        margin-bottom: 50px;
     }
 
-    .fondoInicio {
+    .filtroMobile>.fondoInicio {
         background-color: var(--verde);
         padding: 1em;
-        margin-bottom: 1em;
+
 
     }
 
-    /* ------------------------------------------------------SECCION ARTICULOS------------------------------ */
+    /* -------------------------------------SECCION ARTICULOS------------------------------ */
 
     .dosSecciones {
         display: flex;
         flex-direction: row;
         gap: 1em;
         margin-top: 50px;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .articulos {
@@ -768,9 +949,6 @@ footer .teMail {
         flex-direction: column;
     }
 
-    .articulos article:first-child div {
-        padding: 0 1em 1em 1em;
-    }
 
     svg:hover .pruebaFill {
         fill: var(--blanco);
@@ -780,23 +958,117 @@ footer .teMail {
         stroke: var(--blanco);
         ;
     }
+
     .articulos article:hover>div {
-        background-color: var(--verde); 
-        border-radius: 0 25px 0 0;   
-         }
-       .articulos article:hover>div h3, .articulos article:hover>div div ,.articulos article:hover>div div svg .pruebaFill {
-           color:var(--blanco);
-           fill: var(--blanco);
-          
-       }  
-       .articulos article:hover>div div svg .pruebaStroke{
-      
-           stroke: var(--blanco);
-           ;
-       }
+        background-color: var(--verde);
+        border-radius: 0 25px 0 0;
+    }
 
+    .articulos article:hover>div h3,
+    .articulos article:hover>div div,
+    .articulos article:hover>div div svg .pruebaFill {
+        color: var(--blanco);
+        fill: var(--blanco);
 
+    }
 
+    .articulos article:hover>div div svg .pruebaStroke {
+
+        stroke: var(--blanco);
+        ;
+    }
+
+    /* ---------------------------------DETALLE ARTICULO--------------------------------------------------- */
+    .datos {
+        flex-direction: row;
+    }
+
+    .nombrePrecio {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .descripcion>div>p {
+        display: block;
+    }
+
+    .botonera input[type="button"]:last-child {
+        background: url(../iconos/heart.svg) no-repeat 2% center;
+        text-align: end;
+    }
+
+    .botonera input[type="button"]:nth-of-type(2):hover {
+        border: 2px solid var(--gris);
+        color: var(--gris);
+
+    }
+
+    .botonera input[type="button"]:last-child:hover {
+
+        border-bottom: 2px solid var(--gris);
+
+    }
+
+    /* <!-- ---------------------------------SECCION VENTA CRUZADA DETALLE-------------------------------------------------- --> */
+
+    .articulosVtaDetalle article {
+        width: 20%;        
+    }
+
+     .articulosVtaDetalle article:hover {
+        background-color: var(--verde);
+    } 
+    .articulosVtaDetalle article:hover>div:last-child h3{
+        color: var(--blanco);
+    }
+
+    .articulosVtaDetalle article:hover .precioIcono .menuIconos{
+        --Iconsax-Color: var(--blanco);
+    }
+    .articulosVtaDetalle article:hover .precioIcono p{
+        color: var(--blanco);
+    }
+
+    .articulosVtaDetalle article div figure{
+        padding: 0.5em;
+    }
+
+    .articulosVtaDetalle article div figure img {
+        width: 100%;
+        height: 15vh;
+    }
+
+    .articulosVtaDetalle article>div:last-child p {
+        margin-bottom: 0;
+    }
+
+    .botonera input[type="button"]:first-child:hover {
+        background-color: var(--gris);
+    }
+
+    .articulosVtaDetalle article>div:last-child h3 {
+        color: var(--verde);
+       
+    }
+   
+
+    .precioIcono {
+        
+        margin: 0.5em 0 0.5em 0;
+        color: var(--verde);
+    }
+
+    .precioIcono .menuIconos {
+        --Iconsax-Color: var(--verde);
+        margin: 0;
+    }
+
+   
+
+    .precioIcono p {
+        font-size: 1em;
+        margin: 0;
+    }
 
     /* -----------------------------FOOTER--------------------------------------------------------------- */
 
@@ -826,7 +1098,7 @@ footer .teMail {
     }
 
     .filtroMobile {
-        width: 30%;
+        width: 40%;
     }
 
     .articulos {
@@ -836,29 +1108,83 @@ footer .teMail {
     }
 
     .articulos article {
-        width: 30%;      
+        width: 30%;
     }
-   
- 
 
-
-    .articulos article div div div{
-        width: 25%;      
+    .articulos article div div div {
+        width: 30%;
     }
- 
+
     #datosArticulos article>div {
         padding: 5px;
     }
+
     .articulos article figure img {
         border-radius: 0 25px 0 25px;
     }
 
+    /* ---------------------------------DETALLE ARTICULO--------------------------------------------------- */
+    .datos {
+        flex-direction: row;
+    }
+
+    .contenedorImagenes {
+        flex-direction: row;
+        gap: 1em;
+        padding: 0 0 0 0.5em;
+        margin-top: 2em;
+        justify-content: flex-start;
+        margin-bottom: 2em;
+    }
+
+    .imgPrincipal {
+        width: 70%;
+        margin: 0;
+    }
+
+    .imgPrincipal img {
+        width: 100%;
+    }
+
+    .imgMiniaturas {
+        flex-direction: column;
+        width: 20%;
+        gap: 15px;
+    }
+
+    .imgMiniaturas img {
+        width: 100%;
+    }
+
+    .descripcion {
+        width: 30%;
+        padding: 0 1em 0 0;
+        margin-top: 2em;
+    }
+
+    /* <!-- ---------------------------------SECCION VENTA CRUZADA DETALLE-------------------------------------------------- --> */
+    .articulosVtaDetalle article div figure img {
+        height: 20vh;
+    }
+
+    .precioIcono {
+        justify-content: space-between;
+
+    }
 }
 
 /* -------------------------------------------RESOLUCION 1200---------------------------------------------------------------------------------- */
 @media screen and (min-width: 1200px) {
     nav.centrado {
         margin-top: 20px;
+    }
+
+    .filtroMobile {
+        width: 25%;
+    }
+
+    .articulos article div div div {
+        width: 25%;
     }
 
     .centrado {
@@ -868,6 +1194,23 @@ footer .teMail {
 
     .slider p {
         width: 1200px;
+    }
+
+    .contenedorImagenes {
+        padding: 0;
+        width: 60%;
+    }
+
+    .botonera input[type="button"]:last-child {
+
+        background: url(../iconos/heart.svg) no-repeat 10% center;
+        text-align: center;
+    }
+
+    /* <!-- ---------------------------------SECCION VENTA CRUZADA DETALLE-------------------------------------------------- --> */
+    .articulosVtaDetalle article div figure img {
+
+        height: 30vh;
     }
 
     footer>div {
