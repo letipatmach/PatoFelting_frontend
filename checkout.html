@@ -61,79 +61,172 @@
       </div>
     </div>
     <!-- --------------------------FORMULARIO OPCIONES DE ENVIO - DATOS ENVIO --------------------------------------------->
+    <div class="centrado paginaTotal">
+      <div class="juntoSecciones">
+        <section class="formEnvio">
+          <form>
+            <div class="tituloOpDatEnv">
+              <hr />
+              Opciones de envío
+              <hr />
+            </div>
+            <div class="opEnvio">
+              <div>
+                <i class="iconsax menuIconos" icon-name="location"></i>
+                <p>Retirar Local</p>
+              </div>
+              <div>
+                <i class="iconsax menuIconos" icon-name="shopping-cart"></i>
+                <p>Enviar a domicilio</p>
+              </div>
+            </div>
+          </form>
+          <form class="datosEnvio">
+            <div class="tituloOpDatEnv">
+              <hr />
+              Datos de envío
+              <hr />
+            </div>
+            <label for="email">E-mail</label>
+            <input
+              type="text"
+              name="email"
+              id="btnEmail"
+              placeholder="Ingrese su e-mail"
+            />
+            <p id="mensajeEmail">algo te flata en este mail</p>
+            <label for="direccion">Direccion de envío</label>
+            <input
+              type="text"
+              name="direccion"
+              id="btnDireccion"
+              placeholder="Ingrese su direccion"
+            />
+            <p id="mensajeDireccion">le pifiaste</p>
+            <div class="departamentoCiudad">
+              <label for="departamento">Departamento</label>
+              <input
+                type="text"
+                name="departamento"
+                id="btnDepartamento"
+                placeholder="Ingrese un departamento"
+              />
+              <p id="mensajeDepartamento">error</p>
+              <label for="ciudad">Ciudad</label>
+              <input
+                type="text"
+                name="ciudad"
+                id="btnCiudad"
+                placeholder="Ingrese una ciudad"
+              />
+              <p id="mensajeCiudad">ay ay casi</p>
+            </div>
+            <label for="celular">Celular</label>
+            <div class="celular">
+              <p>+598</p>
+              <input
+                type="text"
+                name="celular"
+                id="btnCelular"
+                placeholder="Ingrese su celular"
+              />
+            </div>
+            <p id="mensajeCelular">pasame tu cel pillin</p>
+          </form>
+        </section>
+        <!-- -----------------------SECCION ARTICULOS EN CARRITO------------------------------ -->
+        <section class="carritoResumen">
+          <div class="artCarrito">
+            <article>
+              <figure>
+                <img
+                  src="./img/detalleArticulo/Personajes/squirtle/squirtle_1.jpeg"
+                  alt="squirtle"
+                />
+              </figure>
+              <div class="descripcionCarrito">
+                <div>
+                  <h3>Squirtle</h3>
+                  <div class="precioMobile">$1200</div>
+                  <p>Tamaño: <span class="tamano">3cm - 6cm</span></p>
 
-    <section class="centrado formEnvio">
-      <form>
-        <legend>
-          <hr />
-          Opciones de envío
-          <hr />
-        </legend>
-        <div>
-          <div>
-            <i class="iconsax menuIconos" icon-name="location"></i>
-            <p>Retirar Local</p>
-          </div>
-          <div>
-            <i class="iconsax menuIconos" icon-name="shopping-cart"></i>
-            <p>Enviar a domicilio</p>
-          </div>
-        </div>
-      </form>
-      <form>
-        <legend>
-          <hr />
-          Datos de envío
-          <hr />
-        </legend>
-        <label for="email">E-mail</label>
-        <input
-          type="email"
-          name="email"
-          id="btnEmail"
-          placeholder="Ingrese su e-mail"
-        />
-        <p id="mensajeEmail"></p>
-        <label for="direccion">Direccion de envío</label>
-        <input
-          type="text"
-          name="direccion"
-          id="btnDireccion"
-          placeholder="Ingrese su direccion"
-        />
-        <p id="mensajeDireccion"></p>
-        <div class="departamentoCiudad">
-          <label for="departamento">Departamento</label>
-          <input
-            type="text"
-            name="departamento"
-            id="btnDepartamento"
-            placeholder="Ingrese un departamento"
-          />
-          <p id="mensajeDepartamento"></p>
-          <label for="ciudad">Ciudad</label>
-          <input
-            type="text"
-            name="ciudad"
-            id="btnCiudad"
-            placeholder="Ingrese una ciudad"
-          />
-          <p id="mensajeCiudad"></p>
-        </div>
-        <label for="celular">Celular</label>
-        <div class="celular">
-          <p>+598</p>
-          <input
-            type="text"
-            name="celular"
-            id="btnCelular"
-            placeholder="Ingrese su celular"
-          />
-        </div>
-        <p id="mensajeCelular"></p>
-      </form>
-    </section>
+                  <p>
+                    Cantidad
+                    <span class="numeroCantidad">1</span>
+                  </p>
+                </div>                
+              </div>
+              <div class="precioDesktop">$1200</div>
+            </article>
+            <article>
+              <figure>
+                <img
+                  src="./img/detalleArticulo/Personajes/squirtle/squirtle_1.jpeg"
+                  alt="squirtle"
+                />
+              </figure>
+              <div class="descripcionCarrito">
+                <div>
+                  <h3>Squirtle</h3>
+                  <div class="precioMobile">$1200</div>
+                  <p>Tamaño: <span class="tamano">3cm - 6cm</span></p>
 
+                  <p>
+                    Cantidad
+                    <span class="numeroCantidad">1</span>
+                  </p>
+                </div>               
+              </div>
+              <div class="precioDesktop">$1200</div>
+            </article>
+            <article>
+                <figure>
+                  <img
+                    src="./img/detalleArticulo/Personajes/squirtle/squirtle_1.jpeg"
+                    alt="squirtle"
+                  />
+                </figure>
+                <div class="descripcionCarrito">
+                  <div>
+                    <h3>Squirtle</h3>
+                    <div class="precioMobile">$1200</div>
+                    <p>Tamaño: <span class="tamano">3cm - 6cm</span></p>
+  
+                    <p>
+                      Cantidad
+                      <span class="numeroCantidad">1</span>
+                    </p>
+                  </div>                  
+                </div>
+                <div class="precioDesktop">$1200</div>
+              </article>
+          </div>
+        </section>
+      </div>
+      <!-- --------------------------RESUMEN DE PEDIDO---------------------- -->
+      <div class="formResumen">
+        <div class="resumen">
+          <div class="tituloResumen">
+            <h2>Resumen de pedido</h2>
+            <hr />
+          </div>
+          <div class="subTotal">
+            <p>Sub-Total:</p>
+            <p>$1200</p>
+          </div>
+          <div class="envio">
+            <p>Envío:</p>
+            <p>$200</p>
+          </div>
+          <hr />
+          <div class="total">
+            <p>Total:</p>
+            <p>$1400</p>
+          </div>
+        </div>
+        <input type="button" value="Procesar la compra" />
+      </div>
+    </div>
     <!-- --------------------------------------------FOOTER-------------------------------------------------------------------->
     <footer>
       <div class="centrado">

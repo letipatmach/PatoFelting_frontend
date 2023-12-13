@@ -49,11 +49,13 @@ header {
     background-color: var(--verde);
     border: none;
 }
+
 /* ----------------------------HEADER CHECKOUT---------------------------------- */
-#checkout{
-    color: var(--verde);  
+#checkout {
+    color: var(--verde);
 }
-#checkout .menuIconos{
+
+#checkout .menuIconos {
     --Iconsax-Color: var(--verde);
 }
 
@@ -708,9 +710,11 @@ nav button {
     --Iconsax-Color: var(--gris);
     --Iconsax-Size: 20px;
 }
-.descripcionCarrito div:first-child p:last-child span{
+
+.descripcionCarrito div:first-child p:last-child span {
     padding: 0 0.5em 0 0.5em;
 }
+
 .bototesEliminarFav {
     display: flex;
     flex-direction: column;
@@ -766,6 +770,97 @@ nav button {
     font-size: 1.2em;
 }
 
+/* ------------------------------------------------FORMULARIO ENVIO------------------------------------------------------------------- */
+.formEnvio {
+    display: flex;
+    flex-direction: column;
+    /* place-items: center; */
+    justify-content: center;
+    padding: 1em;
+
+}
+
+.formEnvio form {
+    text-align: center;
+}
+
+.formEnvio form .tituloOpDatEnv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2em;
+
+}
+
+.formEnvio form .tituloOpDatEnv hr {
+    width: 30%;
+    border: none;
+    border-top: 1px solid var(--gris);
+}
+
+.opEnvio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em 0em 3em 0em;
+}
+
+.opEnvio div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+}
+
+.opEnvio div .menuIconos {
+    --Iconsax-Color: var(--gris);
+    --Iconsax-Size: 20px;
+}
+
+.datosEnvio {
+    display: flex;
+    flex-direction: column;
+}
+
+.datosEnvio label,
+.datosEnvio p {
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    text-align: left;
+}
+
+.departamentoCiudad {
+    display: flex;
+    flex-direction: column;
+}
+
+.celular {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+
+}
+
+.celular input[type="text"] {
+    width: 90%;
+}
+
+.formEnvio input[type="text"] {
+    border: none;
+    border-bottom: 1px solid var(--gris);
+}
+
+.formEnvio input[type="text"]:focus {
+    outline: none;
+}
+
+.celular p {
+    margin-bottom: 0;
+    margin-top: 0;
+    border-bottom: 1px solid var(--gris);
+}
 
 /* --------------------------------------------------------------------FOOTER------------------------------------------------------------ */
 
@@ -810,15 +905,17 @@ footer .teMail {
 @media screen and (min-width: 768px) {
 
     /* ----------------------------HEADER CHECKOUT-768 --------------------------------- */
-#checkout{
-    color: var(--blanco);  
-}
-#checkout .menuIconos{
-    --Iconsax-Color: var(--blanco);
-}
-#chevronLeft .menuIconos{
-  display: none;
-}
+    #checkout {
+        color: var(--blanco);
+    }
+
+    #checkout .menuIconos {
+        --Iconsax-Color: var(--blanco);
+    }
+
+    #chevronLeft .menuIconos {
+        display: none;
+    }
 
 
     /* -----------------------------MENU-768--------------------------------------------------------------- */
@@ -1130,7 +1227,9 @@ footer .teMail {
     .descripcion>div>p {
         display: block;
     }
-    .descripcion, .nombrePrecio {
+
+    .descripcion,
+    .nombrePrecio {
         color: var(--gris);
     }
 
@@ -1150,8 +1249,8 @@ footer .teMail {
         border-bottom: 2px solid var(--gris);
 
     }
-     
-  
+
+
 
     /* <!-- ---------------------------------SECCION VENTA CRUZADA DETALLE-768 -------------------------------------------------- --> */
     /* <!-- ---------------------------------SECCION VENTA CRUZADA CARRITO-768 -------------------------------------------------- --> */
@@ -1232,12 +1331,13 @@ footer .teMail {
         width: 30%;
         padding: 1em 1em 1em 1em;
         color: var(--blanco);
-        
+
     }
+
     .descripcionCarrito div:first-child p:last-child .menuIconos {
         --Iconsax-Color: var(--blanco);
     }
-   
+
     .artCarrito {
         width: 65%;
         margin-right: 0.5em;
@@ -1250,186 +1350,226 @@ footer .teMail {
     .tituloResumen {
         margin-top: 2em;
     }
+
     .formResumen input[type="button"]:hover {
         background-color: var(--gris);
     }
-    
-    /* -----------------------------FOOTER-768--------------------------------------------------------------- */
 
-    footer>div {
-        gap: 48vw;
-    }
-
-    footer .teMail {
+    /* -----------------------------FORMULARIO ENVIO-768---------------------------------------------------- */
+    .paginaTotal {
         display: flex;
+        flex-direction: row;
+        padding-top: 2em;
     }
 
-}
-
-
-/* ------------------------------------------------RESOLUCION 992------------------------------------------------------------------------------- */
-@media screen and (min-width: 992px) {
-
-    /* ----------------------------HEADER CHECKOUT-992 --------------------------------- */
-    #checkout{
-        width: 20%;
-    }
-
-
-
-
-    .menuDerecha {
-        width: 10vw;
-    }
-
-    .slider p:first-child {
-        margin-bottom: 5em;
-    }
-
-    .articulos article div {
-        padding: 0;
-    }
-
-    .filtroMobile {
-        width: 40%;
-    }
-
-    .articulos {
-        gap: 2em;
-        justify-content: flex-start;
+    .juntoSecciones {
+        display: flex;
+        flex-direction: column;
         width: 70%;
     }
 
-    .articulos article {
-        width: 30%;
+    .juntoSecciones .carritoResumen .artCarrito {
+        width: 100%;
     }
 
-    .articulos article div div div {
-        width: 30%;
-    }
-
-    #datosArticulos article>div {
-        padding: 5px;
-    }
-
-    .articulos article figure img {
+    .paginaTotal .formResumen .resumen {
+        background-color: var(--gris);
+        color: var(--blanco);
+        padding: 1em 0.5em 1em 0.5em;
         border-radius: 0 25px 0 25px;
     }
 
-    /* ---------------------------------DETALLE ARTICULO-992--------------------------------------------------- */
-    .datos {
-        flex-direction: row;
+    .paginaTotal .formResumen .resumen .tituloResumen {
+        margin-top: 0;
     }
-
-    .contenedorImagenes {
-        flex-direction: row;
-        gap: 1em;
-        padding: 0 0 0 0.5em;
-        margin-top: 2em;
-        justify-content: flex-start;
-        margin-bottom: 2em;
+     .resumen hr{
+        border: 1px solid var(--blanco);
     }
-
-    .imgPrincipal {
-        width: 70%;
-        margin: 0;
-    }
-
-    .imgPrincipal img {
-        width: 100%;
-    }
-
-    .imgMiniaturas {
+    .paginaTotal .formResumen{
+        display: flex;
         flex-direction: column;
-        width: 20%;
-        gap: 15px;
-    }
-
-    .imgMiniaturas img {
-        width: 100%;
-    }
-
-    .descripcion {
-        width: 30%;
-        padding: 0 1em 0 0;
-        margin-top: 2em;
-    }
-
-    /* <!-- ---------------------------------SECCION VENTA CRUZADA DETALLE-992-------------------------------------------------- --> */
-    /* <!-- ---------------------------------SECCION VENTA CRUZADA CARRITO-992-------------------------------------------------- --> */
-    .articulosVtaDetalle article div figure img {
-        height: 20vh;
-    }
-
-    .precioIcono {
         justify-content: space-between;
     }
-
-    /* -----------------------------------------SECCION ARTICULOS EN CARRITO-992--------------------------------------------------- */
-
-    .precioMobile {
-        display: none;
+    .paginaTotal .formResumen input[type="button"]{
+        margin-bottom: 3em;
     }
 
-    .precioDesktop {
-        display: flex;
-        align-items: center;
-        color: var(--blanco);
-        font-size: 1.3em;
-        font-weight: bolder;
-    }
-  
-    .artCarrito article figure {
-        width: 40%;
-    }
+        /* -----------------------------FOOTER-768--------------------------------------------------------------- */
 
-}
+        footer>div {
+            gap: 48vw;
+        }
 
+        footer .teMail {
+            display: flex;
+        }
 
-
-
-/* -------------------------------------------RESOLUCION 1200---------------------------------------------------------------------------------- */
-@media screen and (min-width: 1200px) {
-    nav.centrado {
-        margin-top: 20px;
     }
 
-    .filtroMobile {
-        width: 25%;
+
+    /* ------------------------------------------------RESOLUCION 992------------------------------------------------------------------------------- */
+    @media screen and (min-width: 992px) {
+
+        /* ----------------------------HEADER CHECKOUT-992 --------------------------------- */
+        #checkout {
+            width: 20%;
+        }
+
+
+
+
+        .menuDerecha {
+            width: 10vw;
+        }
+
+        .slider p:first-child {
+            margin-bottom: 5em;
+        }
+
+        .articulos article div {
+            padding: 0;
+        }
+
+        .filtroMobile {
+            width: 40%;
+        }
+
+        .articulos {
+            gap: 2em;
+            justify-content: flex-start;
+            width: 70%;
+        }
+
+        .articulos article {
+            width: 30%;
+        }
+
+        .articulos article div div div {
+            width: 30%;
+        }
+
+        #datosArticulos article>div {
+            padding: 5px;
+        }
+
+        .articulos article figure img {
+            border-radius: 0 25px 0 25px;
+        }
+
+        /* ---------------------------------DETALLE ARTICULO-992--------------------------------------------------- */
+        .datos {
+            flex-direction: row;
+        }
+
+        .contenedorImagenes {
+            flex-direction: row;
+            gap: 1em;
+            padding: 0 0 0 0.5em;
+            margin-top: 2em;
+            justify-content: flex-start;
+            margin-bottom: 2em;
+        }
+
+        .imgPrincipal {
+            width: 70%;
+            margin: 0;
+        }
+
+        .imgPrincipal img {
+            width: 100%;
+        }
+
+        .imgMiniaturas {
+            flex-direction: column;
+            width: 20%;
+            gap: 15px;
+        }
+
+        .imgMiniaturas img {
+            width: 100%;
+        }
+
+        .descripcion {
+            width: 30%;
+            padding: 0 1em 0 0;
+            margin-top: 2em;
+        }
+
+        /* <!-- ---------------------------------SECCION VENTA CRUZADA DETALLE-992-------------------------------------------------- --> */
+        /* <!-- ---------------------------------SECCION VENTA CRUZADA CARRITO-992-------------------------------------------------- --> */
+        .articulosVtaDetalle article div figure img {
+            height: 20vh;
+        }
+
+        .precioIcono {
+            justify-content: space-between;
+        }
+
+        /* -----------------------------------------SECCION ARTICULOS EN CARRITO-992--------------------------------------------------- */
+
+        .precioMobile {
+            display: none;
+        }
+
+        .precioDesktop {
+            display: flex;
+            align-items: center;
+            color: var(--blanco);
+            font-size: 1.3em;
+            font-weight: bolder;
+        }
+
+        .artCarrito article figure {
+            width: 40%;
+        }
+
     }
 
-    .articulos article div div div {
-        width: 25%;
+
+
+
+    /* -------------------------------------------RESOLUCION 1200---------------------------------------------------------------------------------- */
+    @media screen and (min-width: 1200px) {
+        nav.centrado {
+            margin-top: 20px;
+        }
+
+        .filtroMobile {
+            width: 25%;
+        }
+
+        .articulos article div div div {
+            width: 25%;
+        }
+
+        .centrado {
+            margin: 0 auto;
+            width: 1200px;
+        }
+
+        .slider p {
+            width: 1200px;
+        }
+
+        .contenedorImagenes {
+            padding: 0;
+            width: 60%;
+        }
+
+        .botonera input[type="button"]:last-child {
+
+            background: url(../iconos/heart.svg) no-repeat 10% center;
+            text-align: center;
+        }
+
+        /* <!-- ---------------------------------SECCION VENTA CRUZADA DETALLE-1200-------------------------------------------------- --> */
+        .articulosVtaDetalle article div figure img {
+
+            height: 30vh;
+        }
+
+        footer>div {
+            gap: 20vw;
+        }
+
     }
-
-    .centrado {
-        margin: 0 auto;
-        width: 1200px;
-    }
-
-    .slider p {
-        width: 1200px;
-    }
-
-    .contenedorImagenes {
-        padding: 0;
-        width: 60%;
-    }
-
-    .botonera input[type="button"]:last-child {
-
-        background: url(../iconos/heart.svg) no-repeat 10% center;
-        text-align: center;
-    }
-
-    /* <!-- ---------------------------------SECCION VENTA CRUZADA DETALLE-1200-------------------------------------------------- --> */
-    .articulosVtaDetalle article div figure img {
-
-        height: 30vh;
-    }
-
-    footer>div {
-        gap: 20vw;
-    }
-
-}
