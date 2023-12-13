@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PatoFelting - Checkout</title>
+    <!-- enlazo fuentes de google chrome -->
+
+    <!-- font Andada Pro -->
+    <!-- CSS -->
+    <!-- font-family: 'Andada Pro', serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Andada+Pro:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font alegreya sans -->
+
+    <!-- CSS -->
+    <!-- font-family: 'Alegreya Sans', sans-serif;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos -->
+    <script src="//glenthemes.github.io/iconsax/geticons.js"></script>
+    <link href="//glenthemes.github.io/iconsax/style.css" rel="stylesheet" />
+    <link href="iconos/style.css" rel="stylesheet" />
+
+    <!-- Me enlazo a mi propia hoja de estilos -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!-- -----------------------------------------------HEADER---------------------------------------------------------- -->
+    <div class="fondoInicio">
+      <div class="centrado">
+        <header>
+          <div class="lineasMenu" id="chevronLeft">
+            <button id="btnAbrirMenu">
+              <i class="iconsax menuIconos" icon-name="chevron-left"></i>
+            </button>
+          </div>
+          <a href="index.html">
+            <img
+              src="img/logo_editado.png"
+              alt="logo con descripción Pato felting fondo verde"
+            />
+          </a>
+          <div class="menuDerecha" id="checkout">
+            <p>
+              Seguir comprando
+              <i class="iconsax menuIconos" icon-name="chevron-right"></i>
+            </p>
+          </div>
+        </header>
+      </div>
+    </div>
+    <!-- --------------------------FORMULARIO OPCIONES DE ENVIO - DATOS ENVIO --------------------------------------------->
+
+    <section class="centrado formEnvio">
+      <form>
+        <legend>
+          <hr />
+          Opciones de envío
+          <hr />
+        </legend>
+        <div>
+          <div>
+            <i class="iconsax menuIconos" icon-name="location"></i>
+            <p>Retirar Local</p>
+          </div>
+          <div>
+            <i class="iconsax menuIconos" icon-name="shopping-cart"></i>
+            <p>Enviar a domicilio</p>
+          </div>
+        </div>
+      </form>
+      <form>
+        <legend>
+          <hr />
+          Datos de envío
+          <hr />
+        </legend>
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          name="email"
+          id="btnEmail"
+          placeholder="Ingrese su e-mail"
+        />
+        <p id="mensajeEmail"></p>
+        <label for="direccion">Direccion de envío</label>
+        <input
+          type="text"
+          name="direccion"
+          id="btnDireccion"
+          placeholder="Ingrese su direccion"
+        />
+        <p id="mensajeDireccion"></p>
+        <div class="departamentoCiudad">
+          <label for="departamento">Departamento</label>
+          <input
+            type="text"
+            name="departamento"
+            id="btnDepartamento"
+            placeholder="Ingrese un departamento"
+          />
+          <p id="mensajeDepartamento"></p>
+          <label for="ciudad">Ciudad</label>
+          <input
+            type="text"
+            name="ciudad"
+            id="btnCiudad"
+            placeholder="Ingrese una ciudad"
+          />
+          <p id="mensajeCiudad"></p>
+        </div>
+        <label for="celular">Celular</label>
+        <div class="celular">
+          <p>+598</p>
+          <input
+            type="text"
+            name="celular"
+            id="btnCelular"
+            placeholder="Ingrese su celular"
+          />
+        </div>
+        <p id="mensajeCelular"></p>
+      </form>
+    </section>
+
+    <!-- --------------------------------------------FOOTER-------------------------------------------------------------------->
+    <footer>
+      <div class="centrado">
+        <div class="teMail">
+          <i class="iconsax" icon-name="phone"></i>
+          <p>094 959 961</p>
+          <i class="iconsax" icon-name="mail"></i>
+          <p>pato.lop@gmail.com</p>
+        </div>
+        <div class="redes">
+          <a href="https://www.facebook.com/PatoFelting/"
+            ><i class="iconsax menuIconos" icon-name="facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/pato_felting/?hl=es"
+            ><i class="iconsax menuIconos" icon-name="instagram"></i
+          ></a>
+          <a href="https://wa.me/59894959961"
+            ><i class="iconsax menuIconos" icon-name="whatsapp"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
