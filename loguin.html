@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PatoFelting - Checkout</title>
+    <title>PatoFelting - Loguin</title>
     <!-- enlazo fuentes de google chrome -->
 
     <!-- font Andada Pro -->
@@ -40,7 +40,7 @@
     <div class="fondoInicio">
       <div class="centrado">
         <header>
-          <div class="lineasMenu" id="chevronLeft">
+          <div class="lineasMenu" id="loguin">
             <button id="btnAbrirMenu">
               <i class="iconsax menuIconos" icon-name="chevron-left"></i>
             </button>
@@ -51,7 +51,7 @@
               alt="logo con descripción Pato felting fondo verde"
             />
           </a>
-          <div class="menuDerecha" id="checkout">
+          <div class="menuDerecha" id="loguinDerecha">
             <p>
               Seguir comprando
               <i class="iconsax menuIconos" icon-name="chevron-right"></i>
@@ -60,6 +60,89 @@
         </header>
       </div>
     </div>
+    <!-- --------------------------------------------FORM INGRESO------------------------------------------------------------------>
+    <div class="centrado">
+    <div class="dosForm">
+      
+        <form class="formIngreso">
+          <h2>Ingresar</h2>
+          <label for="email">E-mail</label>
+          <input
+            type="text"
+            name="email"
+            id="btnEmailIng"
+            placeholder="Ingrese su e-mail"
+          />
+          <p id="mensajeEmailIng">algo te flata en este mail ing</p>
+          <label for="contrasenia">Contraseña</label>
+          <input
+            type="password"
+            name="contrasenia"
+            id="btnContraseniaIng"
+            placeholder="Ingrese su contraseña"
+          />
+          <p id="mensajeContraseñaIng">sin contraseña no entras</p>
+          <input
+            type="button"
+            id="olvido"
+            value="¿Has Olvidado la contraseña?"
+          />
+          <input type="button" id="btnIngresar" value="Ingresar" />
+        </form>
+        <hr />
+        <!-- --------------------------------------------FORM REGISTRO------------------------------------------------------------------>
+        <form class="formRegistro">
+          <h2>Registrarse</h2>
+
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            name="nombre"
+            id="btnNombre"
+            placeholder="Ingrese su Nombre"
+          />
+          <p id="mensajeNombre">algo te flata en este mail ing</p>
+
+          <label for="apellido">Apellido</label>
+          <input
+            type="text"
+            name="apellido"
+            id="btnApellido"
+            placeholder="Ingrese su apellido"
+          />
+          <p id="mensajeApellido">algo te flata en este mail ing</p>
+
+          <label for="email">E-mail</label>
+          <input
+            type="text"
+            name="email"
+            id="btnEmailIng"
+            placeholder="Ingrese su e-mail"
+          />
+          <p id="mensajeEmailIng">algo te flata en este mail ing</p>
+          <label for="contrasenia">Contraseña</label>
+          <input
+            type="password"
+            name="contrasenia"
+            id="btnContraseniaIng"
+            placeholder="Ingrese su contraseña"
+          />
+          <p id="mensajeContraseñaIng">contraseña super segura please</p>
+
+          <label for="reCon">Repetir contraseña</label>
+          <input
+            type="password"
+            name="reCon"
+            id="btnReCon"
+            placeholder="Repita su contraseña"
+          />
+          <p id="mensajeReCon">Porfa ingresa de nuevo la contraseña</p>
+
+          <input type="button" id="btnRegistrarse" value="Registrase" />
+        </form>
+      </div>
+    </div>
+
     <!-- --------------------------------------------FOOTER-------------------------------------------------------------------->
     <footer>
       <div class="centrado">
