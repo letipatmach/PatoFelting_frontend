@@ -15,13 +15,25 @@ import {
 const mostrarError = (error) => {
   console.log("Muestro errores");
 };
-const pMinimo = document.querySelector("#prMinimo");
-const pMaximo = document.querySelector("#prMaximo");
+const pMinimo  =  document.querySelector("#prMinimo");
+const pMaximo  =  document.querySelector("#prMaximo");
+let tamano = document.querySelectorAll('input[type="radio"]');
+const descuento =document.querySelector("#descuento");
+const btnBorrarFiltros = document.querySelector("#btnBorrarFiltros");
+ 
+
+//-----
+
 
 //--------------------asigno eventos---------
 
 pMinimo.addEventListener("keyup", buscaPrecio);
 pMaximo.addEventListener("keyup", buscaPrecio);
+tamano.forEach(function(tamano) {
+  tamano.addEventListener('change', buscaPrecio);  
+} )
+descuento.addEventListener("change", buscaPrecio);
+btnBorrarFiltros.addEventListener("click",limpiarFiltros);
 
 //Listo en pantalla inicial las categorias
 
@@ -64,14 +76,27 @@ const listarArticulos = (data) => {
 
 //--------------funcion buscar-----------------------------------
 function buscar(id) {
+  let tamanoActivo = document.querySelector('input[name="tamano"]:checked');
+  let filtroTamano ="";
+  if(tamanoActivo) {    
+      filtroTamano = tamanoActivo.id;
+  } else {
+      filtroTamano ="";
+  }
+
   let precioMinimo = pMinimo.value;
   let precioMaximo = pMaximo.value;
+  let filtroCategoria = id;
+  let filtroDescuento  =descuento.checked;
+
   console.log("PrecioMinimo" + precioMinimo);
   console.log("PrecioMaximo " + precioMaximo);
-  console.log("Categoria Activa: "+id)
-  let filtroCategoria = id;
+  console.log("Categoria Activa: "+id)   
+  console.log("Tamaño seleccionado es "+filtroTamano)
+  console.log("Con Descuento"+filtroDescuento)
+ 
   MiServidor.obtenerListadoArticulos({
-    filtroCategoria,precioMinimo,precioMaximo
+    filtroCategoria,precioMinimo,precioMaximo,filtroTamano,filtroDescuento
   })
     .then(listarArticulos)
     .catch(mostrarError);
@@ -91,6 +116,7 @@ function seleccionar(id) {
 
 function buscaPrecio() { 
   let catActiva = categoriaActiva();
+  console.log("Buscando Precio");
   buscar(catActiva)
 }
 
@@ -107,9 +133,21 @@ function categoriaActiva(){
   return activa
 }
 
+  function limpiarFiltros(){
+    location.reload();
+  }
+
 //-------------------------------------VALIDAR FORMULARIO AGREGAR ARTICULO--------------------------------------------
 
 //------------------------------------Funciones al cargar el sitio----------------------------------------------------
 
 MiServidor.obtenerListadoArticulos().then(listarArticulos).catch(mostrarError);
 MiServidor.obtenerCategorias().then(listarCategorias).catch(mostrarError);
+function cantElementoCarrito(){
+  let cantCarrito = sessionStorage.getItem("cant");
+  if(cantCarrito>0){
+    document.getElementById("numeroCarrito").innerHTML =cantCarrito
+  }
+}
+
+cantElementoCarrito()

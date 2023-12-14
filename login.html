@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PatoFelting - Loguin</title>
+    <!-- enlazo fuentes de google chrome -->
+
+    <!-- font Andada Pro -->
+    <!-- CSS -->
+    <!-- font-family: 'Andada Pro', serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Andada+Pro:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font alegreya sans -->
+
+    <!-- CSS -->
+    <!-- font-family: 'Alegreya Sans', sans-serif;-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos -->
+    <script src="//glenthemes.github.io/iconsax/geticons.js"></script>
+    <link href="//glenthemes.github.io/iconsax/style.css" rel="stylesheet" />
+    <link href="iconos/style.css" rel="stylesheet" />
+
+    <!-- Me enlazo a mi propia hoja de estilos -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!-- -----------------------------------------------HEADER---------------------------------------------------------- -->
+    <div class="fondoInicio">
+      <div class="centrado">
+        <header>
+          <div class="lineasMenu" id="loguin">
+            <button id="btnAbrirMenu">
+              <i class="iconsax menuIconos" icon-name="chevron-left"></i>
+            </button>
+          </div>
+          <a href="index.html">
+            <img
+              src="img/logo_editado.png"
+              alt="logo con descripción Pato felting fondo verde"
+            />
+          </a>
+          <div class="menuDerecha" id="loguinDerecha">
+            <p>
+              Seguir comprando
+              <i class="iconsax menuIconos" icon-name="chevron-right"></i>
+            </p>
+          </div>
+        </header>
+      </div>
+    </div>
+    <!-- --------------------------------------------FORM INGRESO------------------------------------------------------------------>
+    <div class="centrado">
+    <div class="dosForm">
+      
+        <form class="formIngreso">
+          <h2>Ingresar</h2>
+          <label for="email">E-mail</label>
+          <input
+            type="text"
+            name="email"
+            id="btnEmailIng"
+            placeholder="Ingrese su e-mail"
+          />
+          <p id="mensajeEmailIng" class="ocultarError"></p>
+          <label for="contrasenia">Contraseña</label>
+          <input
+            type="password"
+            name="contrasenia"
+            id="btnContraseniaIng"
+            placeholder="Ingrese su contraseña"
+          />
+          <p id="mensajeContrasenaIng" class="ocultarError"></p>
+          <p id="mensajePass"   class="ocultarError"></p>
+          <input
+            type="button"
+            id="olvido"
+            value="¿Has Olvidado la contraseña?"
+          />
+          <input type="button" id="btnIngresar" value="Ingresar" />
+        </form>
+        <hr />
+        
+        <!-- --------------------------------------------FORM REGISTRO------------------------------------------------------------------>
+        <form class="formRegistro">
+          <h2>Registrarse</h2>
+
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            name="nombre"
+            id="btnNombre"
+            placeholder="Ingrese su Nombre"
+          />
+          <p id="mensajeNombre" class="ocultarError"></p>
+
+          <label for="apellido">Apellido</label>
+          <input
+            type="text"
+            name="apellido"
+            id="btnApellido"
+            placeholder="Ingrese su apellido"
+          />
+          <p id="mensajeApellido"  class="ocultarError"></p>
+
+          <label for="email">E-mail</label>
+          <input
+            type="text"
+            name="email"
+            id="btnEmailReg"
+            placeholder="Ingrese su e-mail"
+          />
+          <p id="mensajeEmailReg"  class="ocultarError"></p>
+          <label for="contrasenia">Contraseña</label>
+          <input
+            type="password"
+            name="contrasenia"
+            id="btnContraseniaReg"
+            placeholder="Ingrese su contraseña"
+          />
+          <p id="mensajeContrasenaReg"  class="ocultarError"></p>
+
+          <label for="reCon">Repetir contraseña</label>
+          <input
+            type="password"
+            name="reCon"
+            id="btnReCon"
+            placeholder="Repita su contraseña"
+          />
+          <p id="mensajeReContrasenaReg"  class="ocultarError"></p>
+
+          <input type="button" id="btnRegistrarse" value="Registrase" />
+        </form>
+      </div>
+    </div>
+
+    <!-- --------------------------------------------FOOTER-------------------------------------------------------------------->
+    <footer>
+      <div class="centrado">
+        <div class="teMail">
+          <i class="iconsax" icon-name="phone"></i>
+          <p>094 959 961</p>
+          <i class="iconsax" icon-name="mail"></i>
+          <p>pato.lop@gmail.com</p>
+        </div>
+        <div class="redes">
+          <a href="https://www.facebook.com/PatoFelting/"
+            ><i class="iconsax menuIconos" icon-name="facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/pato_felting/?hl=es"
+            ><i class="iconsax menuIconos" icon-name="instagram"></i
+          ></a>
+          <a href="https://wa.me/59894959961"
+            ><i class="iconsax menuIconos" icon-name="whatsapp"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+      <!-- -------------------------------------------Usuario Guardado------------------------------- -->
+      <div id="guardado">
+        <div>
+          <p>Usuario registrado satisfactoriamente</p>
+          <input type="button" value="CERRAR" id="cerrarConfGuardado" />
+        </div>
+      </div>
+
+
+    <script src="js/login.js" type="module"></script>
+  </body>
+</html>

@@ -50,9 +50,16 @@ header {
     border: none;
 }
 
-/* ----------------------------HEADER CHECKOUT---------------------------------- */
+/* ----------------------------HEADER CHECKOUT--------------------------------------------------------------------------------- */
 #checkout {
     color: var(--verde);
+}
+
+#checkout a,
+#checkout a:link {
+    text-decoration: none;
+    color: var(--verde);
+
 }
 
 #checkout .menuIconos {
@@ -586,6 +593,9 @@ nav button {
     border-radius: 0 20px 0 20px;
 
 }
+/* #categoriaArticulo{
+
+} */
 
 /* <!-- -------------------------------------------------SECCION VENTA CRUZADA DETALLE-------------------------------------------------- --> */
 /* <!-- -------------------------------------------------SECCION VENTA CRUZADA CARRITO-------------------------------------------------- --> */
@@ -874,13 +884,12 @@ nav button {
     color: var(--verde);
 }
 
-/* -----------------------------------------------------FORMULARIOS LOGUIN--------------------------------------------------------- */
+/* -----------------------------------------------------FORMULARIOS LOGIN--------------------------------------------------------- */
 .dosForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 1em;
-
 
 }
 
@@ -909,19 +918,30 @@ nav button {
 .dosForm label,
 .dosForm p {
     text-align: left;
-    margin-bottom: 0.5em;
-    color: var(--gris);
-}
-
-.dosForm p {
-    margin-top: 0.5em;
+    margin-bottom: 1em;   
+    margin-top: 1em;
 
 }
-
+.dosForm label{
+    color:var(--gris)
+}
+.dosForm p{
+    padding: 0.5em;
+}
 .dosForm input[type="text"],
 .dosForm input[type="password"] {
     border: none;
     border-bottom: 1px solid var(--gris);
+    padding: 0.5em;
+}
+.dosForm input[type="text"]:focus,
+.dosForm input[type="password"]:focus {
+   outline: none;
+   color:var(--verde);
+}
+.dosForm input[type="text"]::placeholder,
+.dosForm input[type="password"]::placeholder {
+    color: var(--gris);
 }
 
 #olvido {
@@ -941,11 +961,84 @@ nav button {
 }
 
 #btnRegistrarse {
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 .dosForm hr {
     border: 1px solid var(--blanco)
+}
+
+.ocultarError{
+   display: none;    
+}
+
+.mostrarError{
+    display: block; 
+    background-color: var(--rojo);
+    color: var(--blanco);
+ 
+}
+/*----------------- VEntana Modal Guardado */
+#guardado, #prodcutoAgregado {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    place-items: center;
+
+    /* cuando se visualice la modal hay que poner grid */
+    /* display: grid; */
+    display: none;
+    z-index: 10000;
+}
+
+#guardado>div, #prodcutoAgregado>div  {
+    padding: 2em 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    height: fit-content;
+    background-color: var(--verde);
+    width: 70%;
+    box-sizing: border-box;
+    border-radius: 0 25px 0 25px;
+    align-items: center;
+
+}
+
+#guardado>div>p , #prodcutoAgregado>div>p{
+    color: var(--blanco);
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1em;
+}
+.botoneraProductoAg{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#guardado>div>input[type="button"], #prodcutoAgregado>div> .botoneraProductoAg input[type="button"] {
+    width: 50%;
+    background-color: var(--gris);
+    color: var(--blanco);
+    border: transparent;
+    border-radius: 0 5px 0 5px;
+    padding: 0.5em;
+    font-weight: bolder;
+}
+#prodcutoAgregado>div> .botoneraProductoAg input[type="button"] {
+    padding: 20px
+
+}
+
+#guardado>div>input[type="button"]:hover, #prodcutoAgregado>div> .botoneraProductoAg  input[type="button"]:hover {
+    background-color: var(--blanco);
+    color: var(--gris);
 }
 
 
@@ -981,6 +1074,27 @@ footer .teMail {
     padding: 0.2em;
 }
 
+/* ------------------------------------------------SITIO EN CONSTRUCCION----------------------------------------------------------- */
+.sitioConstruccion {
+    background: url(../img/slider1.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.sitioConstruccion h2 {
+    color: var(--blanco);
+    text-align: center;
+    margin: 0 auto;
+    padding: 10em 2em 0 2em;
+    font-size: 2em;
+    margin-top: 1em;
+    font-family: 'Andada Pro', serif;
+    font-size: 3em;
+}
+
+
+
 /* ---------------------------------------------- MEDIAS QUERYS---------------------------------------------------------------------------------- */
 
 /* -----------------------------------------------RESOLUCION 576----------------------------------------------------------------------------------*/
@@ -992,6 +1106,11 @@ footer .teMail {
 
     /* ----------------------------HEADER CHECKOUT-768 --------------------------------- */
     #checkout {
+        color: var(--blanco);
+    }
+
+    #checkout a,
+    #checkout a:link {
         color: var(--blanco);
     }
 
@@ -1499,6 +1618,10 @@ footer .teMail {
     .dosForm hr {
         border: 1px solid var(--gris)
     }
+   /* ----------------------------VENTANA MODAL - 768--------------------------------------------------- */
+    #guardado>div, #prodcutoAgregado>div {
+        width: 60%;
+    }
 
     /* -----------------------------FOOTER-768--------------------------------------------------------------- */
 
@@ -1629,6 +1752,12 @@ footer .teMail {
         width: 40%;
     }
 
+
+    /* -----------------------------------------VENTANA MODAL-992--------------------------------------------------- */
+    #guardado>p, #prodcutoAgregado>p {
+        width: 50%;
+    }
+
 }
 
 
@@ -1672,6 +1801,11 @@ footer .teMail {
     .articulosVtaDetalle article div figure img {
 
         height: 30vh;
+    }
+       /* -----------------------------------------VENTANA MODAL-1200--------------------------------------------------- */
+
+    #guardado>div,#prodcutoAgregado>div {
+        width: 30%;
     }
 
     footer>div {

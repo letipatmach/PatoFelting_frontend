@@ -1,4 +1,5 @@
 import { Articulos } from "./Articulos.js";
+import { Carritos } from "./Carritos.js";
 import { Imagenes } from "./Imagenes.js";
 import { MiServidor } from "./MiServidor.js";
 
@@ -6,27 +7,27 @@ export const imprimir = (elemento, contenido) => {
   document.querySelector(`#${elemento}`).innerHTML = contenido;
 };
 
-// export const validarSesion = () => {
-//   const sesionActiva = sessionStorage.getItem("sesionActiva") === "TRUE";
-//   const estaEnLogin = document.location.pathname.includes("login.html");
+export const validarSesion = () => {
+  const sesionActiva = sessionStorage.getItem("sesionActiva") === "TRUE";
+  const estaEnLogin = document.location.pathname.includes("login.html");
 
-//   if (!sesionActiva) {
-//     if (!estaEnLogin) {
-//       document.location.replace("login.html");
-//     }
-//   } else if (estaEnLogin) {
-//     document.location.replace("index.html");
-//   }
-// };
+  if (!sesionActiva) {
+    if (!estaEnLogin) {
+      document.location.replace("login.html");
+    }
+  } else if (estaEnLogin) {
+    document.location.replace("index.html");
+  }
+};
 
-// export const eventoClickCerrarSesion = () => {
-//   document.querySelector("#btnCerrarSesion").addEventListener("click", (e) => {
-//     sessionStorage.clear();
-//     validarSesion();
+export const eventoClickCerrarSesion = () => {
+  document.querySelector("#btnCerrarSesion").addEventListener("click", (e) => {
+    sessionStorage.clear();
+    validarSesion();
 
-//     MiServidor.salirusu().then(console.log).catch(console.log);
-//   });
-// };
+    MiServidor.salirusu().then(console.log).catch(console.log);
+  });
+};
 
 
 const btnMenu = document.querySelector(".lineasMenu");
@@ -129,7 +130,27 @@ export const mostrarDetalleI = (imagenes = [new Imagenes()]) => {
   return listado;
 };
 
+//listado sugerencia
 
+export const mostrarTodasLasSugerencias= (articulos = [new Articulos()]) => {
+  console.log("mostrarSugerencias-en utiles");
+  let listado = "";
+  articulos.forEach((c) => {
+    listado += c.mostrarSugerencias();
+  });
+
+  return listado;
+};
+//--- Listado de Carrito
+export const mostrarListadoCarrito= (carrito = [new Carritos()]) => {
+  console.log("caritos-en utiles");
+  let listado = "";
+  carrito.forEach((c) => {
+    listado += c.mostrarListado();
+  });
+
+  return listado;
+};
 
 
 

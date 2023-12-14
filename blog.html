@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PatoFelting - Detalle</title>
+    <title>PatoFelting - Blog</title>
     <!-- enlazo fuentes de google chrome -->
 
     <!-- font Andada Pro -->
@@ -26,17 +26,15 @@
       href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-
     <!-- Iconos -->
     <script src="//glenthemes.github.io/iconsax/geticons.js"></script>
     <link href="//glenthemes.github.io/iconsax/style.css" rel="stylesheet" />
     <link href="iconos/style.css" rel="stylesheet" />
-
     <!-- Me enlazo a mi propia hoja de estilos -->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <!-- -----------------------------------------------HEADER---------------------------------------------------------------------------- -->
+    <!-- -----------------------------------------------HEADER---------------------------------------------------------- -->
     <div class="fondoInicio">
       <div class="centrado">
         <header>
@@ -51,69 +49,31 @@
               alt="logo con descripción Pato felting fondo verde"
             />
           </a>
+
           <div class="menuDerecha">
             <i class="iconsax menuIconos" icon-name="heart"></i>
-            <div class="carrito">
-              <i class="iconsax menuIconos" icon-name="basket-2"></i>
-              <span class="numeroCarrito" id="numeroCarrito">0</span>            
-            </div>
-            
-            <a href="login.html"><i class="iconsax menuIconos" icon-name="user-2"></i></a>
+            <i class="iconsax menuIconos" icon-name="basket-2"></i>
+            <i class="iconsax menuIconos" icon-name="user-2"></i>
           </div>
         </header>
       </div>
     </div>
-    <!-- -------------------------------------------------MENU------------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------MENU------------------------------------------------------------- -->
     <nav class="centrado">
       <button id="btnCerrarMenu">
         <i class="iconsax menuIconos" icon-name="close-circle"></i>
       </button>
       <ul>
-        <li><a href="index.html" >Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="blog.html" id="itemActivo">Blog</a></li>
         <li><a href="personalizaciones.html">Personalizaciones</a></li>
       </ul>
     </nav>
-    <!-- -------------------------------------------------SECCION DETALLE DEL ARTICULO--------------------------------------------------------- -->
-    <section class="datos centrado">
-      <!-- agregr id id="imagenes" al div para que funcione por java script -->
-      <div class="contenedorImagenes">
-        <div class="imgPrincipal" id="imgPrincipal">
-         
-        </div>
-        <div class="imgMiniaturas" id="imgMiniaturas">
-         
-        </div>
-      </div>
+    <!-- -------------------------------------------SITIO EN CONSTRUCCION----------------------------------------------------->
+    <div class="sitioConstruccion"><h2>Sitio en Construcción</h2></div>
 
-      <div class="descripcion" id="detalle">
-        
-      </div>
-    </section>
-    <!-- -------------------------------------------------SECCION VENTA CRUZADA DETALLE--------------------------------------------------------- -->
-    <section class="centrado vtaCruzadaDetalle">
-      <div class="tituloVtaDetalle">
-        <hr />
-        <h2>Quienes vieron este producto compraron</h2>
-        <hr />
-      </div>
-      <div class="articulosVtaDetalle" id="articulosVtaDetalle">
-    
-      </div>
-    </section>
-    <div id="prodcutoAgregado">
-      <div>
-        <p>Usuario registrado satisfactoriamente</p>
-        <div class="botoneraProductoAg">
-        <input type="button" value="Ver Carrito" id="verCarrito" />
-        <input type="button" value="Continuar Comprando" id="continuarComprando" />
-      </div>
-      </div>
-    </div>
-
-
-    <!-- --------------------------------------------FOOTER------------------------------------------------------------------------------------------->
+    <!-- --------------------------------------------FOOTER-------------------------------------------------------------------->
     <footer>
       <div class="centrado">
         <div class="teMail">
@@ -133,8 +93,8 @@
             ><i class="iconsax menuIconos" icon-name="whatsapp"></i
           ></a>
         </div>
-      </div>    
+      </div>
     </footer>
-    <script src="js/detalle.js" type="module"></script>
+    <script src="js/catalogo.js" type="module"></script>
   </body>
 </html>

@@ -52,8 +52,15 @@
 
           <div class="menuDerecha">
             <i class="iconsax menuIconos" icon-name="heart"></i>
-            <i class="iconsax menuIconos" icon-name="basket-2"></i>
-            <i class="iconsax menuIconos" icon-name="user-2"></i>
+            <a href="carrito.html"
+              ><div class="carrito">
+                <i class="iconsax menuIconos" icon-name="basket-2"></i>
+                <span class="numeroCarrito" id="numeroCarrito">0</span>
+              </div>
+            </a>
+            <a href="login.html"
+              ><i class="iconsax menuIconos" icon-name="user-2"></i
+            ></a>
           </div>
         </header>
       </div>
@@ -95,19 +102,19 @@
             <h2>Tamaño</h2>
             <div>
               <div>
-                <input type="radio" name="tamaño" id="3_5cm" />
+                <input type="radio" id="3_5cm" name="tamano" />
                 <label for="3_5cm">3 cm - 5 cm</label>
               </div>
               <div>
-                <input type="radio" name="tamaño" id="6_10cm" />
+                <input type="radio" name="tamano" id="6_10cm" />
                 <label for="6_10cm">6 cm - 10 cm</label>
               </div>
               <div>
-                <input type="radio" name="tamaño" id="11_15cm" />
+                <input type="radio" name="tamano" id="11_15cm" />
                 <label for="11_15cm">11 cm - 15 cm</label>
               </div>
               <div>
-                <input type="radio" name="tamaño" id="mas15cm" />
+                <input type="radio" name="tamano" id="mas15cm" />
                 <label for="mas15cm">más de 15 cm</label>
               </div>
             </div>
@@ -120,7 +127,7 @@
             </div>
           </div>
         </div>
-        <input type="button" value="Borrar todos" />
+        <input type="button" value="Borrar todos" id="btnBorrarFiltros" />
       </section>
       <!-- -----------------------------------------SECCION ARTICULOS FILTRADOS------------------------------------------------ -->
       <section id="datosArticulos" class="articulos">

@@ -7,9 +7,6 @@ import { imprimir, mostrarTodasLasNovedades,mostrarTodasLasOfertas,mostrarMenu,c
 const mostrarError = (error) => {
   console.log("Muestro errores");
 };
-
-
-
 //Listo los artículos con novedades
 
 const listarNovedades = (data) => {
@@ -51,9 +48,27 @@ const listarOfertas = (data) => {
 };
 
 
+
+
+
+
+
+
+
+
+
+
 //-------------------------------------VALIDAR FORMULARIO AGREGAR ARTICULO--------------------------------------------
 
 //------------------------------------Funciones al cargar el sitio----------------------------------------------------
 MiServidor.obtenerOfertas().then(listarOfertas).catch(mostrarError);
 MiServidor.obtenerNovedades().then(listarNovedades).catch(mostrarError);
 
+function cantElementoCarrito(){
+  let cantCarrito = sessionStorage.getItem("cant");
+  if(cantCarrito>0){
+    document.getElementById("numeroCarrito").innerHTML =cantCarrito
+  }
+}
+
+cantElementoCarrito()

@@ -22,8 +22,50 @@ const headers = {
 };
 
 export class MiServidor {
-  // static urlBase = "http://localhost:3000";
-  static urlBase ="https://patofelting-api.onrender.com";
+  static urlBase = "http://localhost:3000";
+  // static urlBase ="https://patofelting-api.onrender.com";
+
+
+
+  //============================================= USUARIO =============================================================
+  // POST /ingreso usuario
+
+  static ingresousu(email, contrasenia) {
+    const body = JSON.stringify({ email, contrasenia });
+    console.log("ingresando por mi servidor")
+    return fetch(obtenerUrl("ingresousu"), { method: "POST", body, headers })
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+
+  //POST /salir usuario
+
+  static salirusu() {
+    return fetch(obtenerUrl("salirusu"), { method: "POST" })
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+  //POST ingreso nuevo usuario
+
+  static registrousu(
+    nombreUsu,
+    apellidoUsu,
+    email,
+    contrasenia,
+    repetirContrasenia
+  ) {
+    const body = JSON.stringify({
+      nombreUsu,
+      apellidoUsu,
+      email,
+      contrasenia,
+      repetirContrasenia,
+    });
+
+    return fetch(obtenerUrl("registrousu"), { method: "POST", body, headers })
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
 
   //================================================HOME ===============================================================
 
@@ -69,7 +111,17 @@ export class MiServidor {
     } else if (opciones.precioMaximo) {
        queryParams.set("precioMaximo", opciones.precioMaximo);
     }
+    if (opciones.filtroTamano == "") {    
+    } else if (opciones.filtroTamano) {
+       queryParams.set("filtroTamano", opciones.filtroTamano);
+    }
     
+    if (opciones.filtroDescuento == "false") {    
+    } else if (opciones.filtroDescuento) {
+       queryParams.set("filtroDescuento", opciones.filtroDescuento);
+    }
+
+
     return fetch(obtenerUrl("listaArticulos?"+queryParams))
       .then(procesarRespuesta)
       .catch(manejarErrores);
@@ -97,6 +149,56 @@ export class MiServidor {
       .catch(manejarErrores);
   }
  
+  static obtenerSugerencias(opciones = {}) {
+    const queryParams = new URLSearchParams({});
+    
+    if (opciones.idBuscar == "") {
+    } else if (opciones.idBuscar) {
+      queryParams.set("idArticulo", opciones.idBuscar);
+    }
 
-  //*******************************************comentario
+    console.log("sugerencia en mi servidor")
+    return fetch(obtenerUrl("sugerencia"))
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+
+  //********************LLENAR CARRIT
+
+  static cargarCarrito(  
+              codigoVta  ,
+              usuario    ,
+              idArticulo ,
+              cantidad   ,
+              precio     ,
+              total      ,
+              rutaImagen ,
+              nombre     ,
+              altura       ) {
+    const body = JSON.stringify({
+                codigoVta  ,
+                usuario    ,
+                idArticulo ,
+                cantidad   ,
+                precio     ,
+                total      ,
+                rutaImagen ,
+                nombre     ,
+                altura     
+    });
+
+    return fetch(obtenerUrl("llenarCarrito"), { method: "POST", body, headers })
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+
+  static obtenerDetalleCarrito(codigoVta) {  
+      console.log("Codigo Rebido:"+codigoVta)
+    console.log("Ruta: "+obtenerUrl(`carrito/${codigoVta}`))   
+    return fetch(obtenerUrl(`carrito/${codigoVta}`))
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+
+
 }

@@ -21,17 +21,27 @@ export class Articulos {
     imagenPorDefecto = ""
   ) {
     this.idArticulo = idArticulo;
-    this.categoria = categoria,
-      this.nombre = nombre,
-      this.precio = precio,
-      this.novedad = novedad,
-      this.descuento = descuento,
-      this.porcentajeDto = porcentajeDto,
-      this.descripcion = descripcion,
-      this.imagenPorDefecto = imagenPorDefecto;
+    (this.categoria = categoria),
+      (this.nombre = nombre),
+      (this.precio = precio),
+      (this.novedad = novedad),
+      (this.descuento = descuento),
+      (this.porcentajeDto = porcentajeDto),
+      (this.descripcion = descripcion),
+      (this.imagenPorDefecto = imagenPorDefecto);
   }
 
   mostrarListadoArticulos() {
+    const pr = this.precio;
+    const dto = this.porcentajeDto / 100;
+    const precioFinal = pr - pr * dto;
+    let tieneDescuento = "";
+    let precioMostrar = "Precio: $ " + this.precio;
+
+    if (dto > 0) {
+      tieneDescuento = " - Dto del " + this.porcentajeDto + "% ";
+      precioMostrar = "Precio $" + this.precio + "   - Con dto:$" + precioFinal;
+    }
     return `
     <article>
     <div>
@@ -39,9 +49,9 @@ export class Articulos {
     <a href="detalle.html?id=${this.idArticulo}"><img src="${this.imagenPorDefecto}" alt="${this.nombre}" title="${this.nombre}" /></a>
       
     </figure>
-    <h3>${this.nombre}</h3>
+    <h3>${this.nombre} ${tieneDescuento}</h3>
     <div>
-      <p>Precio: $${this.precio}</p>
+      <p>${precioMostrar}  </p>
       <div>    
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path  class="pruebaFill" d="M12 21.6516C11.69 21.6516 11.39 21.6116 11.14 21.5216C7.32 20.2116 1.25 15.5616 1.25 8.69156C1.25 5.19156 4.08 2.35156 
@@ -70,7 +80,8 @@ export class Articulos {
     <article>  
       <div>
         <figure>
-            <img src="${this.imagenPorDefecto}" alt="${this.nombre}" title="${this.nombre}" />
+        <a href="detalle.html?id=${this.idArticulo}"><img src="${this.imagenPorDefecto}" alt="${this.nombre}" title="${this.nombre}" /></a>
+        
       
 	      </figure>
 	      <h3>${this.nombre}</h3>
@@ -86,7 +97,7 @@ export class Articulos {
     <article>
       <div>
         <figure>
-          <img src="${this.imagenPorDefecto}" alt="${this.nombre}" title="${this.nombre}">
+        <a href="detalle.html?id=${this.idArticulo}"><img src="${this.imagenPorDefecto}" alt="${this.nombre}" title="${this.nombre}" /></a>
         </figure>
         <div>
           <h3>${this.nombre}</h3>
@@ -96,33 +107,79 @@ export class Articulos {
      </article>
      `;
   }
-  mostrarDetalleArticulo() {     
+  mostrarDetalleArticulo() {
+    const pr = this.precio;
+    const dto = this.porcentajeDto / 100;
+    const precioFinal = pr - pr * dto;
+    let tieneDescuento = "";
+    let precioMostrar = "Precio: $ " + this.precio;
+
+    if (dto > 0) {
+      tieneDescuento = " - Dto del " + this.porcentajeDto + "% ";
+      precioMostrar = "Precio $" + this.precio + "   - Con dto:$" + precioFinal;
+    }
+
     return `
     <div>
     <div class="nombrePrecio">
-      <h2>${this.nombre}</h2>
-      <p>Precio: $ ${this.precio}</p>
+      <h2 id="nombreArtDet">${this.nombre}  ${tieneDescuento}</h2>
+      <p id="prArticulo" data-precio ="${precioFinal}">${precioMostrar}</p>
     </div>
     <p>
     ${this.descripcion}
     </p>
   </div>
+  
   <div class="botonera">
-    <input type="button" value="Añadir a Carrito" />
-    <input type="button" value="Consultar Personalizacion" />
+    <input type="button" id="agregarCarrito" value="Añadir a Carrito" />
+  
+    <input id="consultarPersonalizado" type="button" value="Consultar Personalizacion" />
+
+
     <input type="button" value="Añadir Lista de deseos" />
   </div>
          `;
   }
 
-  mostrarImagenPrincipal() {    
-        
+  mostrarImagenPrincipal() {
     return `
-    <img
+    <img id="idImagenArt"
     src="${this.imagenPorDefecto}"
     alt=""
   />
          `;
   }
 
+  mostrarSugerencias() {
+console.log("estamos en articulos")
+    const pr = this.precio;
+    const dto = this.porcentajeDto / 100;
+    const precioFinal = pr - pr * dto;
+    let tieneDescuento = "";
+    let precioMostrar = "Precio: $ " + this.precio;
+
+    if (dto > 0) {
+      tieneDescuento = " - Dto del " + this.porcentajeDto + "% ";
+      precioMostrar = "Precio $" + this.precio + "   - Con dto:$" + precioFinal;
+    }
+    return `
+    <article>
+          <div>
+            <figure>
+            <a href="detalle.html?id=${this.idArticulo}"><img src="${this.imagenPorDefecto}" alt="${this.nombre}" title="${this.nombre}" /></a>
+            </figure>
+            <div>
+              <h3>${this.nombre}</h3>
+              <div class="precioIcono">
+                <p>${precioMostrar}</p>
+                <div>
+                  <i class="iconsax menuIconos" icon-name="heart"></i>
+                  <i class="iconsax menuIconos" icon-name="basket-2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        `;
+  }
 }
