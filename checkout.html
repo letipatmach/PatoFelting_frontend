@@ -72,11 +72,11 @@
               <hr />
             </div>
             <div class="opEnvio">
-              <div>
-                <i class="iconsax menuIconos" icon-name="location"></i>
+              <div id="retira">
+                <i  class="iconsax menuIconos" icon-name="location"></i>
                 <p>Retirar Local</p>
               </div>
-              <div>
+              <div id="envia">
                 <i class="iconsax menuIconos" icon-name="shopping-cart"></i>
                 <p>Enviar a domicilio</p>
               </div>
@@ -103,7 +103,7 @@
               id="btnDireccion"
               placeholder="Ingrese su direccion"
             />
-            <p id="mensajeDireccion">le pifiaste</p>
+            <p id="mensajeDireccion">Debe Completar la Direccion</p>
             <div class="departamentoCiudad">
               <label for="departamento">Departamento</label>
               <input
@@ -112,7 +112,7 @@
                 id="btnDepartamento"
                 placeholder="Ingrese un departamento"
               />
-              <p id="mensajeDepartamento">error</p>
+              <p id="mensajeDepartamento"> </p>
               <label for="ciudad">Ciudad</label>
               <input
                 type="text"
@@ -120,7 +120,7 @@
                 id="btnCiudad"
                 placeholder="Ingrese una ciudad"
               />
-              <p id="mensajeCiudad">ay ay casi</p>
+              <p id="mensajeCiudad"> </p>
             </div>
             <label for="celular">Celular</label>
             <div class="celular">
@@ -132,12 +132,12 @@
                 placeholder="Ingrese su celular"
               />
             </div>
-            <p id="mensajeCelular">pasame tu cel pillin</p>
+            <p id="mensajeCelular"> </p>
           </form>
         </section>
         <!-- -----------------------SECCION ARTICULOS EN CARRITO------------------------------ -->
         <section class="carritoResumen">
-          <div class="artCarrito">
+          <div class="artCarrito" id="artCarritoChek" >
             <article>
               <figure>
                 <img
@@ -213,19 +213,19 @@
           </div>
           <div class="subTotal">
             <p>Sub-Total:</p>
-            <p>$1200</p>
+            <p id="subTotalCarrito">$0</p>
           </div>
           <div class="envio">
             <p>Envío:</p>
-            <p>$200</p>
+            <p id="prenvio">$200</p>
           </div>
           <hr />
           <div class="total">
             <p>Total:</p>
-            <p>$1400</p>
+            <p id="totalCarrito">$0</p>
           </div>
         </div>
-        <input type="button" value="Procesar la compra" />
+        <input type="button" id="btnProcesar" value="Procesar la compra" />
       </div>
     </div>
     <!-- --------------------------------------------FOOTER-------------------------------------------------------------------->
@@ -250,6 +250,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/index.js" type="module"></script>
+    <script src="js/checkout.js" type="module"></script>
   </body>
 </html>

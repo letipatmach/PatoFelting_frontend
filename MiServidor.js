@@ -22,8 +22,8 @@ const headers = {
 };
 
 export class MiServidor {
-  static urlBase = "http://localhost:3000";
-  // static urlBase ="https://patofelting-api.onrender.com";
+  // static urlBase = "http://localhost:3000";
+  static urlBase ="https://patofelting-api.onrender.com";
 
 
 
@@ -200,5 +200,44 @@ export class MiServidor {
       .catch(manejarErrores);
   }
 
+  static obtenerDetalleCarritoChek(codigoVta) {  
+    console.log("Codigo Rebido Check:"+codigoVta)
+  console.log("Ruta: "+obtenerUrl(`carrito/${codigoVta}`))   
+  return fetch(obtenerUrl(`carrito/${codigoVta}`))
+    .then(procesarRespuesta)
+    .catch(manejarErrores);
+}
+
+   //-- Eliminar ARticulo de Carrito
+  static eliminarArtCarrito(idCarrito) {
+    return fetch(obtenerUrl(`borrararticulocarrito/${idCarrito}`), { method: "DELETE" })
+      .then(procesarRespuesta)
+      .catch(manejarErrores);
+  }
+
+    //********************CARGAR CHECKOUT
+
+      static cargarCheck(       
+      codigoVta    ,
+      usuario     ,
+      direccion   ,
+      departamento, 
+      ciudad 	 , 
+      celular 	 , 
+      montoTotal   ) {
+  const body = JSON.stringify({
+      codigoVta    ,
+      usuario     ,
+      direccion   ,
+      departamento, 
+      ciudad 	 , 
+      celular 	 , 
+      montoTotal   
+  });
+
+  return fetch(obtenerUrl("checkout"), { method: "POST", body, headers })
+  .then(procesarRespuesta)
+  .catch(manejarErrores);
+}
 
 }

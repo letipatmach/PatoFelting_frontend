@@ -9,11 +9,14 @@ import {
 } from "../utiles.js";
 
 
+
+
 const mostrarError = (error) => {
     console.log("Muestro errores");
   };
 //muestro listado de venta cruzada--Sugerencias
-
+const btnProcesar = document.getElementById("procesarCompra")
+btnProcesar.addEventListener("click",procesarCompra)
 const listarSugenencias = (data) => {
     console.log(data);
     const articulo = data.map(
@@ -34,8 +37,10 @@ const listarSugenencias = (data) => {
   };
 
   const listarCarrito = (data) => {
-    console.log(data);
+    console.log("Carrssito:"+data);
+    obtenerTotal(data)
     const carrito = data.map(
+      
       (c) =>
         new Carritos(
           c.idCarrito ,
@@ -49,11 +54,22 @@ const listarSugenencias = (data) => {
           c.nombre    ,
           c.altura    
         )
+      
     );
+    
+   
     imprimir("artCarrito", mostrarListadoCarrito(carrito));
+    document.querySelectorAll(".btnEliminarCar").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const idborrar = btn.id;
+        eliminarDeCarrito(idborrar);
+         
+      });
+    });      
+          
   };
 
-
+ 
 
   MiServidor.obtenerSugerencias()
   .then((data) => {
@@ -81,5 +97,49 @@ const listarSugenencias = (data) => {
       .then(listarCarrito)
       .catch(mostrarError);
   }
+
+
+  function obtenerTotal(data){
+    console.log("Carrito:", data);
+
+    // Obtener solo el campo 'total' de cada objeto
+    const totales = data.map(c => c.total);
+    
+    console.log("Totales:", totales);
+    
+    // Utilizar reduce para sumar los totales
+    const sumaSubTotales = totales.reduce((acumulador, valor) => acumulador + valor, 0);
+    const envio =200;
+    const total = sumaSubTotales+envio;
+    console.log("Suma de totales:", sumaSubTotales);
+    document.getElementById("subTotalCarrito").textContent =sumaSubTotales;
+    document.getElementById("totalCarrito").textContent =total;
+    sessionStorage.setItem("subTotal",sumaSubTotales)
+  }
+
+
+
+  function eliminarDeCarrito(idborrar){
+    console.log("Eliminando El Carrito"+idborrar)
+    MiServidor.eliminarArtCarrito(idborrar)
+    .then(() => {
+       cargarDetalle();
+    })
+    .catch(mostrarError); 
+  }
+
+  function procesarCompra(){
+     let cantCarrito = sessionStorage.getItem("cant")
+     if(cantCarrito>0){
+      console.log("Proceso Compra")
+      document.location.replace("checkout.html");
+     }else{
+      console.log("No Tiene Articulos Compra")
+     }
+  }
+
+
+
+
 
   cargarDetalle();

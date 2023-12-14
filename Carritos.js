@@ -54,13 +54,16 @@ export class Carritos {
           <p>Tamaño: <span class="tamano">${this.altura}</span></p>
           <p>
             Cantidad
+             
             <i class="iconsax menuIconos" icon-name="minus-circle"></i>
             <span class="numeroCantidad">${this.cantidad}</span>
             <i class="iconsax menuIconos" icon-name="add-circle"></i>
+
           </p>
+          
         </div>
         <div class="bototesEliminarFav">
-          <p id="btnEliminar">Eliminar de Carrito |</p>
+         <p class="btnEliminarCar" id="${this.idCarrito}">Eliminar de Carrito |</p> 
           <p id="btnAgregarFav">Añadir a Lista de deseos</p>
         </div>
       </div>
@@ -68,6 +71,34 @@ export class Carritos {
     </article>
       `;
 
+
+  }
+
+  mostrarListadoCheckOut(){
+
+    return `
+    <article>
+    <figure>
+      <img
+        src="./${this.rutaImagen}"
+        alt="squirtle"
+      />
+    </figure>
+    <div class="descripcionCarrito">
+      <div>
+        <h3>${this.nombre}</h3>
+        <div class="precioMobile">$${this.precio}</div>
+        <p>Tamaño: <span class="tamano">${this.altura}</span></p>
+
+        <p>
+          Cantidad
+          <span class="numeroCantidad">${this.cantidad}</span>
+        </p>
+      </div>                
+    </div>
+    <div class="precioDesktop">$${this.precio}</div>
+  </article>
+    `
 
   }
   

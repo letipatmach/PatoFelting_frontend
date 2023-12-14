@@ -37,7 +37,10 @@ const btnCerrarMenu= document.querySelector("#btnCerrarMenu")
 
 if(btnMenu){
   btnMenu.addEventListener("click", mostrarMenu);
-  btnCerrarMenu.addEventListener("click", cerrarMenu);
+  if(btnCerrarMenu){
+    btnCerrarMenu.addEventListener("click", cerrarMenu);
+  }
+  
 }
 //btnMenu.addEventListener("click", mostrarMenu);
 
@@ -147,6 +150,18 @@ export const mostrarListadoCarrito= (carrito = [new Carritos()]) => {
   let listado = "";
   carrito.forEach((c) => {
     listado += c.mostrarListado();
+  });
+
+  return listado;
+};
+
+
+//--- Listado de Carrito
+export const mostrarListadoCarritoCheck= (carrito = [new Carritos()]) => {
+  console.log("caritos-en utiles");
+  let listado = "";
+  carrito.forEach((c) => {
+    listado += c.mostrarListadoCheckOut();
   });
 
   return listado;
